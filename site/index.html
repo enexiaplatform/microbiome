@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microbiome Living Lab — Cleaner Air, Healthier Homes, Better Wellness</title>
+  <meta name="description" content="Discover science-backed microbiome products for air, home, oral, and gut health. Clean does not mean sterile — the future of health is microbial balance.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="main-nav">
+    <div class="nav__inner">
+      <a class="nav__brand" onclick="navigate('/')">
+        <div class="nav__brand-icon">🦠</div>
+        <span>Microbiome Lab</span>
+      </a>
+      <div class="nav__links">
+        <a class="nav__link active" data-route="/" onclick="navigate('/')">Home</a>
+        <a class="nav__link" data-route="/products" onclick="navigate('/products')">Products</a>
+        <a class="nav__link" data-route="/learn" onclick="navigate('/learn')">Learn</a>
+        <a class="nav__link" data-route="/dashboard" onclick="navigate('/dashboard')">Dashboard</a>
+      </div>
+      <button class="nav__hamburger" id="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="nav__mobile" id="mobile-menu">
+    <a class="nav__link" data-route="/" onclick="navigate('/')">Home</a>
+    <a class="nav__link" data-route="/products" onclick="navigate('/products')">Products</a>
+    <a class="nav__link" data-route="/learn" onclick="navigate('/learn')">Learn</a>
+    <a class="nav__link" data-route="/dashboard" onclick="navigate('/dashboard')">Dashboard</a>
+  </div>
+
+  <!-- App Mount Point -->
+  <main id="app"></main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p><strong>Microbiome Living Lab</strong></p>
+      <p>Clean does not mean sterile. The future of health is microbiome balance.</p>
+      <p style="margin-top:12px;">© 2026 Microbiome Living Lab. Educational content only. <a href="#">Affiliate Disclosure</a></p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
