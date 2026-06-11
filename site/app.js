@@ -619,6 +619,60 @@ const ARTICLE_CONTENT = {
     <div style="text-align:center; margin: 40px 0;">
       <a class="btn btn--primary btn--lg" href="https://www.amazon.com/s?k=oral+probiotic+k12" target="_blank" rel="sponsored noopener">Find Oral Probiotics on Amazon →</a>
     </div>
+  `,
+  3: `
+    <h2 class="t-h2" style="margin-top: 24px;">Your Nasal Microbiome</h2>
+    <p class="t-body" style="margin-top: 12px;">Allergies aren't just an overreaction of the immune system; they're heavily influenced by what particles are trapped in your nasal passages. When pollen, dust, or pet dander sit in your nose overnight, they disrupt the local microbiome and cause continuous inflammation.</p>
+    <h2 class="t-h2" style="margin-top: 24px;">The Gentle Rinse Approach</h2>
+    <p class="t-body" style="margin-top: 12px;">Instead of reaching immediately for antihistamines or steroid sprays, consider physically removing the irritants. A gentle saline rinse washes out trapped particles and helps restore the natural moisture balance in your nasal cavity.</p>
+    <div style="text-align:center; margin: 40px 0;">
+      <a class="btn btn--primary btn--lg" href="https://www.amazon.com/s?k=saline+nasal+rinse" target="_blank" rel="sponsored noopener">View Saline Rinse Kits on Amazon →</a>
+    </div>
+  `,
+  4: `
+    <h2 class="t-h2" style="margin-top: 24px;">The Myth of Minty Freshness</h2>
+    <p class="t-body" style="margin-top: 12px;">It's a common misconception that strong, minty mouthwash cures bad breath. In reality, most commercial mouthwashes contain alcohol or harsh antibacterial agents that dry out the mouth and indiscriminately kill all bacteria—good and bad.</p>
+    <h2 class="t-h2" style="margin-top: 24px;">The Rebound Effect</h2>
+    <p class="t-body" style="margin-top: 12px;">When you create a "clean slate" in your mouth by killing everything, odor-causing anaerobic bacteria are usually the first to grow back. Without good bacteria to keep them in check, they multiply rapidly, leading to breath that's worse than before.</p>
+    <div style="text-align:center; margin: 40px 0;">
+      <a class="btn btn--primary btn--lg" href="https://www.amazon.com/s?k=xylitol+gum" target="_blank" rel="sponsored noopener">Explore Better Alternatives on Amazon →</a>
+    </div>
+  `,
+  5: `
+    <h2 class="t-h2" style="margin-top: 24px;">Looks Can Be Deceiving</h2>
+    <p class="t-body" style="margin-top: 12px;">You might change your bedsheets every week and think your bed is perfectly clean. However, the mattress underneath is a dense sponge that collects dead skin cells, sweat, and microscopic dust mites over years of use.</p>
+    <h2 class="t-h2" style="margin-top: 24px;">The Invisible Allergen Trap</h2>
+    <p class="t-body" style="margin-top: 12px;">These dust mites produce allergens that are a primary cause of morning congestion and asthma. Regular vacuuming with a standard machine isn't enough to extract them from deep within the mattress fibers.</p>
+    <div style="text-align:center; margin: 40px 0;">
+      <a class="btn btn--primary btn--lg" href="https://www.amazon.com/s?k=mattress+vacuum+with+uv" target="_blank" rel="sponsored noopener">See Specialized Mattress Vacuums →</a>
+    </div>
+  `,
+  6: `
+    <h2 class="t-h2" style="margin-top: 24px;">Masking vs. Eliminating</h2>
+    <p class="t-body" style="margin-top: 12px;">When a room or pair of shoes smells bad, the instinct is to spray a heavily scented air freshener. But fragrance merely overlays the bad odor; it does nothing to remove the biological source of the smell.</p>
+    <h2 class="t-h2" style="margin-top: 24px;">The Power of Enzymes</h2>
+    <p class="t-body" style="margin-top: 12px;">To truly eliminate persistent odors, you need to break down the organic matter causing them. Enzyme-based cleaners use beneficial bacteria that literally "eat" the odor-causing compounds, leaving nothing behind to smell bad.</p>
+    <div style="text-align:center; margin: 40px 0;">
+      <a class="btn btn--primary btn--lg" href="https://www.amazon.com/s?k=enzyme+odor+cleaner" target="_blank" rel="sponsored noopener">Find Enzyme Cleaners on Amazon →</a>
+    </div>
+  `,
+  8: `
+    <h2 class="t-h2" style="margin-top: 24px;">Beyond the Teeth and Gums</h2>
+    <p class="t-body" style="margin-top: 12px;">If you have excellent dental hygiene but still suffer from chronic bad breath, the source might be further back. The tonsils have deep crevices (crypts) where food particles, dead cells, and bacteria can accumulate and calcify into tonsil stones.</p>
+    <h2 class="t-h2" style="margin-top: 24px;">Targeting the Source</h2>
+    <p class="t-body" style="margin-top: 12px;">These stones emit a foul, sulfurous odor. Safe, targeted removal using proper tools—rather than harsh chemicals or vigorous scraping—can eliminate this hidden source of halitosis and restore confidence.</p>
+    <div style="text-align:center; margin: 40px 0;">
+      <a class="btn btn--primary btn--lg" href="https://www.amazon.com/s?k=tonsil+stone+removal+kit" target="_blank" rel="sponsored noopener">View Tonsil Care Kits on Amazon →</a>
+    </div>
+  `,
+  9: `
+    <h2 class="t-h2" style="margin-top: 24px;">The Bedroom Biome</h2>
+    <p class="t-body" style="margin-top: 12px;">You spend a third of your life in your bedroom. The quality of the air and the state of your bedding profoundly impact your respiratory health. An allergy-free bedroom requires a multi-faceted approach to control dust, pollen, and pet dander.</p>
+    <h2 class="t-h2" style="margin-top: 24px;">Layered Protection</h2>
+    <p class="t-body" style="margin-top: 12px;">Start with a true HEPA air purifier to continuously filter airborne particles. Combine this with regular use of dust mite sprays on upholstery and specialized vacuums for your mattress to create a truly restorative sleep environment.</p>
+    <div style="text-align:center; margin: 40px 0;">
+      <a class="btn btn--primary btn--lg" href="https://www.amazon.com/s?k=hepa+air+purifier+mini" target="_blank" rel="sponsored noopener">Explore HEPA Purifiers on Amazon →</a>
+    </div>
   `
 };
 
