@@ -13,41 +13,41 @@ const CATEGORIES = [
 const PRODUCTS = [
   {
     id: 1, name: 'Stainless Steel Tongue Scraper', category: 'oral',
-    pain: 'Bad breath (Hôi miệng dai dẳng)',
+    pain: 'Persistent bad breath',
     normalFail: 'Your toothbrush is not cleaning the smelly part of your mouth. Mouthwash is not enough if the tongue biofilm stays.',
     whyThisWorks: 'The mouth has a microbiome, and the tongue is prime real estate. Show the hidden white layer causing smell.',
-    link: 'https://shopee.vn/search?keyword=cao%20luoi%20inox',
+    link: 'https://www.amazon.com/s?k=stainless+steel+tongue+scraper',
     featured: true
   },
   {
     id: 2, name: 'Mattress Vacuum with UV', category: 'home',
-    pain: 'Dust cleaning and allergy (Bạn thức dậy và hắt hơi vì giường chứa đầy bụi)',
+    pain: 'Dust allergies and sneezing fits',
     normalFail: 'A clean-looking mattress can still be dirty and full of allergen reservoirs.',
     whyThisWorks: 'Your sleep space has a microbial and allergen environment. Look what comes out of the mattress.',
-    link: 'https://shopee.vn/search?keyword=may%20hut%20bui%20nem%20uv',
+    link: 'https://www.amazon.com/s?k=mattress+vacuum+with+uv',
     featured: true
   },
   {
     id: 3, name: 'Portable Water Flosser', category: 'oral',
-    pain: 'Food stuck between teeth becomes smell later (Thức ăn kẹt gây mùi)',
+    pain: 'Food trapped between teeth causing delayed odor',
     normalFail: 'Brushing hard does not clean between teeth where biofilm hides.',
     whyThisWorks: 'Oral biofilm disruption. Floss smell test demonstrates the hidden buildup.',
-    link: 'https://shopee.vn/search?keyword=may%20tam%20nuoc%20cam%20tay',
+    link: 'https://www.amazon.com/s?k=portable+water+flosser',
     featured: true
   },
   {
     id: 4, name: 'Saline Nasal Rinse Bottle', category: 'air',
-    pain: 'Night allergies may come from what stays in your nose (Nghẹt mũi dị ứng)',
+    pain: 'Nighttime allergies and sinus congestion',
     normalFail: 'Allergy spray is not the only first step. Nasal environment needs cleaning too.',
     whyThisWorks: 'The nose has its own environment; rinse irritants and pollen out gently before sleep.',
-    link: 'https://shopee.vn/search?keyword=binh%20rua%20mui'
+    link: 'https://www.amazon.com/s?k=saline+nasal+rinse'
   },
   {
-    id: 5, name: 'Oral Probiotic Lozenges (K12/M18)', category: 'oral',
-    pain: 'Bad breath keeps coming back after brushing (Hôi miệng dai dẳng)',
+    id: 5, name: 'Oral Probiotic Lozenges', category: 'oral',
+    pain: 'Bad breath keeps coming back after brushing',
     normalFail: 'Killing all bacteria blindly can make the problem come back faster.',
     whyThisWorks: 'Add good oral bacteria to balance the microbiome instead of only attacking bad ones.',
-    link: 'https://shopee.vn/search?keyword=oral%20probiotic%20k12',
+    link: 'https://www.amazon.com/s?k=oral+probiotic+k12',
     featured: true
   },
   {
@@ -55,35 +55,35 @@ const PRODUCTS = [
     pain: 'Shoe, toilet, and pet smells keep returning',
     normalFail: 'Fragrance only covers odor; it does not remove the source.',
     whyThisWorks: 'Enzymes help break down the odor source instead of just perfuming it.',
-    link: 'https://shopee.vn/search?keyword=xit%20khu%20mui%20enzyme'
+    link: 'https://www.amazon.com/s?k=enzyme+odor+cleaner'
   },
   {
     id: 7, name: 'Tonsil Stone Removal Kit', category: 'oral',
-    pain: 'Bad breath from the throat is real (Hôi miệng từ cổ họng)',
+    pain: 'Bad breath originating from the throat',
     normalFail: 'Not all bad breath comes from the stomach. Hidden mouth-throat niches can hold odor-causing bacteria.',
     whyThisWorks: 'Directly removes tonsil niche bacteria that cause severe odor.',
-    link: 'https://shopee.vn/search?keyword=dung%20cu%20lay%20soi%20amidan'
+    link: 'https://www.amazon.com/s?k=tonsil+stone+removal+kit'
   },
   {
     id: 8, name: 'Mini HEPA Air Purifier', category: 'air',
     pain: 'Dust in the room keeps triggering sneezing',
     normalFail: 'Scented candles do not clean the air. Particle reduction is necessary.',
     whyThisWorks: 'Indoor air shapes what your nose and throat deal with daily. White tissue filter test proves its efficacy.',
-    link: 'https://shopee.vn/search?keyword=may%20loc%20khong%20khi%20hepa%20mini'
+    link: 'https://www.amazon.com/s?k=hepa+air+purifier+mini'
   },
   {
     id: 9, name: 'Dust Mite Bedding Spray', category: 'home',
     pain: 'Your pillow may be triggering itchy nose and sneezing',
     normalFail: 'Washing sheets is not the same as treating the mattress.',
     whyThisWorks: 'Bedding is an ecosystem of dust, moisture, and allergens. Controls dust mite allergens directly.',
-    link: 'https://shopee.vn/search?keyword=xit%20diet%20ve%20bui%20nem'
+    link: 'https://www.amazon.com/s?k=dust+mite+spray'
   },
   {
     id: 10, name: 'Xylitol Gum or Lozenges', category: 'oral',
     pain: 'Coffee breath and dry mouth make odor worse',
     normalFail: 'Mint flavor does not equal fresh breath. It just masks it temporarily.',
     whyThisWorks: 'Saliva and pH help shape the oral microbiome. Chew this after coffee to neutralize acids.',
-    link: 'https://shopee.vn/search?keyword=xylitol%20gum'
+    link: 'https://www.amazon.com/s?k=xylitol+gum'
   }
 ];
 
@@ -176,11 +176,17 @@ function render() {
   window.scrollTo(0, 0);
 
   let html = '';
-  switch (route) {
-    case '/products': html = renderProducts(); break;
-    case '/learn': html = renderContentHub(); break;
-    case '/dashboard': html = renderDashboard(); break;
-    default: html = renderLanding();
+  if (route.startsWith('/article/')) {
+    html = renderArticle(route.split('/')[2]);
+  } else {
+    switch (route) {
+      case '/products': html = renderProducts(); break;
+      case '/learn': html = renderContentHub(); break;
+      case '/dashboard': html = renderDashboard(); break;
+      case '/disclosure': html = renderDisclosure(); break;
+      case '/privacy': html = renderPrivacy(); break;
+      default: html = renderLanding();
+    }
   }
 
   app.innerHTML = html;
@@ -347,7 +353,7 @@ function renderProductCard(p) {
         <div class="card__pain">${p.pain}</div>
         <div class="card__fix">❌ Normal fix fails: ${p.normalFail}</div>
         <div class="card__science">✅ ${p.whyThisWorks}</div>
-        <a class="btn btn--primary btn--full mt-12" href="${p.link || '#'}" target="_blank">View Product on Shopee →</a>
+        <a class="btn btn--primary btn--full mt-12" href="${p.link || '#'}" target="_blank" rel="sponsored noopener">Check Price on Amazon →</a>
       </div>
     </div>
   `;
@@ -467,7 +473,7 @@ function renderArticleCard(a) {
   const badgeClass = cat ? `badge--${cat.id}` : 'badge--learn';
   const badgeName = cat ? cat.name : 'Learn';
   return `
-    <div class="card article-card">
+    <div class="card article-card" onclick="navigate('/article/${a.id}')">
       <div class="card__body">
         <span class="badge ${badgeClass}">${badgeName}</span>
         <h3 class="t-h3" style="margin-top:10px;">${a.title}</h3>
@@ -582,6 +588,102 @@ window.addEventListener('scroll', () => {
   const nav = document.querySelector('.nav');
   if (nav) nav.classList.toggle('scrolled', window.scrollY > 10);
 });
+
+// --- ARTICLE AND LEGAL PAGES ---
+const ARTICLE_CONTENT = {
+  1: `
+    <h2 class="t-h2" style="margin-top: 24px;">The Hidden White Layer</h2>
+    <p class="t-body" style="margin-top: 12px;">Most people brush their teeth twice a day and use mouthwash, yet they still struggle with bad breath. The reason is simple: the tongue is prime real estate for bacteria.</p>
+    <p class="t-body" style="margin-top: 12px;">If you stick out your tongue and see a white or yellow coating towards the back, that is a biofilm. It's composed of dead cells, food debris, and millions of anaerobic bacteria that produce volatile sulfur compounds (VSCs) — the exact gases responsible for chronic halitosis.</p>
+    <h2 class="t-h2" style="margin-top: 24px;">Why Brushing Isn't Enough</h2>
+    <p class="t-body" style="margin-top: 12px;">Toothbrush bristles are designed for hard enamel, not the soft, spongy tissue of the tongue. Brushing simply moves the biofilm around without effectively scraping it off.</p>
+    <div style="text-align:center; margin: 40px 0;">
+      <a class="btn btn--primary btn--lg" href="https://www.amazon.com/s?k=stainless+steel+tongue+scraper" target="_blank" rel="sponsored noopener">View Recommended Tongue Scrapers on Amazon →</a>
+    </div>
+  `,
+  2: `
+    <h2 class="t-h2" style="margin-top: 24px;">Invisible Ecosystems</h2>
+    <p class="t-body" style="margin-top: 12px;">You wash your sheets weekly, but have you ever cleaned the mattress itself? Your bed is a thriving microbial ecosystem. Every night, we shed dead skin cells and sweat, creating the perfect warm, humid environment for dust mites and fungal spores.</p>
+    <h2 class="t-h2" style="margin-top: 24px;">The Allergy Reservoir</h2>
+    <p class="t-body" style="margin-top: 12px;">If you wake up sneezing, congested, or with itchy eyes, the problem is likely right under your pillow. A clean-looking mattress can hold millions of dust mites, and their droppings are a potent allergen.</p>
+    <div style="text-align:center; margin: 40px 0;">
+      <a class="btn btn--primary btn--lg" href="https://www.amazon.com/s?k=mattress+vacuum+with+uv" target="_blank" rel="sponsored noopener">Check Mattress Vacuums on Amazon →</a>
+    </div>
+  `,
+  7: `
+    <h2 class="t-h2" style="margin-top: 24px;">The Mouthwash Paradox</h2>
+    <p class="t-body" style="margin-top: 12px;">Alcohol-based mouthwashes feel refreshing because they 'burn'. But they are non-selective: they kill both the bad bacteria and the good, protective bacteria in your mouth.</p>
+    <p class="t-body" style="margin-top: 12px;">When you wipe out your oral microbiome, the fastest bacteria to recolonize are often the odor-causing pathogens. This creates a cycle where you need mouthwash more frequently, but the bad breath keeps returning faster and stronger.</p>
+    <h2 class="t-h2" style="margin-top: 24px;">Bacterial Replacement Therapy</h2>
+    <p class="t-body" style="margin-top: 12px;">Instead of nuking the mouth, modern dentistry is leaning towards oral probiotics like strains K12 and M18. These beneficial bacteria naturally crowd out the sulfur-producing strains.</p>
+    <div style="text-align:center; margin: 40px 0;">
+      <a class="btn btn--primary btn--lg" href="https://www.amazon.com/s?k=oral+probiotic+k12" target="_blank" rel="sponsored noopener">Find Oral Probiotics on Amazon →</a>
+    </div>
+  `
+};
+
+function renderArticle(id) {
+  let title = 'Article Not Found';
+  let content = '<p>Sorry, this article is not available yet.</p>';
+  let articleObj = null;
+
+  for (const group of Object.values(ARTICLES)) {
+    const found = group.find(a => a.id == id);
+    if (found) {
+      articleObj = found;
+      title = found.title;
+      break;
+    }
+  }
+
+  if (ARTICLE_CONTENT[id]) {
+    content = ARTICLE_CONTENT[id];
+  }
+
+  return \`
+    <div class="page" id="page-article">
+      <div class="container" style="max-width: 800px; padding-top: 40px; padding-bottom: 80px;">
+        <button class="btn btn--ghost" style="margin-bottom: 20px; padding: 0;" onclick="navigate('/learn')">← Back to Content Hub</button>
+        <div class="article-content" style="background:var(--surface); border-radius:var(--radius); padding:40px; border:1px solid var(--border);">
+          <div class="card__science" style="margin-bottom: 24px; padding: 12px; background: #fdf2e9; border-radius: 8px; font-weight: 600; color: #d35400;">
+            Disclosure: This post contains affiliate links. If you buy through these links, we may earn a commission at no extra cost to you.
+          </div>
+          <h1 class="t-hero" style="margin-bottom: 16px;">\${title}</h1>
+          \${articleObj ? \`<p class="t-body" style="color:var(--text-muted); margin-bottom:32px;">📖 \${articleObj.readTime} read</p>\` : ''}
+          \${content}
+        </div>
+      </div>
+    </div>
+  \`;
+}
+
+function renderDisclosure() {
+  return \`
+    <div class="page" id="page-disclosure">
+      <div class="container" style="max-width: 800px; padding-top: 60px; padding-bottom: 80px;">
+        <h1 class="t-hero">Affiliate Disclosure</h1>
+        <div class="article-content mt-32" style="background:var(--surface); border-radius:var(--radius); padding:40px; border:1px solid var(--border);">
+          <p class="t-body"><strong>Last Updated: 2026</strong></p>
+          <p class="t-body mt-12">Microbiome Living Lab is a participant in the Amazon Services LLC Associates Program and other affiliate programs. These are affiliate advertising programs designed to provide a means for sites to earn advertising fees by advertising and linking to global marketplaces.</p>
+          <p class="t-body mt-12">When you click on links to various merchants on this site and make a purchase, this can result in this site earning a commission. Affiliate programs and affiliations include, but are not limited to, the eBay Partner Network and Amazon.com.</p>
+        </div>
+      </div>
+    </div>
+  \`;
+}
+
+function renderPrivacy() {
+  return \`
+    <div class="page" id="page-privacy">
+      <div class="container" style="max-width: 800px; padding-top: 60px; padding-bottom: 80px;">
+        <h1 class="t-hero">Privacy Policy</h1>
+        <div class="article-content mt-32" style="background:var(--surface); border-radius:var(--radius); padding:40px; border:1px solid var(--border);">
+          <p class="t-body">At Microbiome Living Lab, we take your privacy seriously. We do not sell your personal information. We use third-party tracking cookies (like Google Analytics) to understand our global audience better. By using this site, you consent to our use of these non-invasive analytics.</p>
+        </div>
+      </div>
+    </div>
+  \`;
+}
 
 // --- EXPOSE GLOBALS FOR INLINE HANDLERS ---
 window.navigate = navigate;
