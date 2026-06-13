@@ -694,7 +694,7 @@ function renderArticle(id) {
     content = ARTICLE_CONTENT[id];
   }
 
-  return \`
+  return `
     <div class="page" id="page-article">
       <div class="container" style="max-width: 800px; padding-top: 40px; padding-bottom: 80px;">
         <button class="btn btn--ghost" style="margin-bottom: 20px; padding: 0;" onclick="navigate('/learn')">← Back to Content Hub</button>
@@ -702,17 +702,17 @@ function renderArticle(id) {
           <div class="card__science" style="margin-bottom: 24px; padding: 12px; background: #fdf2e9; border-radius: 8px; font-weight: 600; color: #d35400;">
             Disclosure: This post contains affiliate links. If you buy through these links, we may earn a commission at no extra cost to you.
           </div>
-          <h1 class="t-hero" style="margin-bottom: 16px;">\${title}</h1>
-          \${articleObj ? \`<p class="t-body" style="color:var(--text-muted); margin-bottom:32px;">📖 \${articleObj.readTime} read</p>\` : ''}
-          \${content}
+          <h1 class="t-hero" style="margin-bottom: 16px;">${title}</h1>
+          ${articleObj ? `<p class="t-body" style="color:var(--text-muted); margin-bottom:32px;">📖 ${articleObj.readTime} read</p>` : ''}
+          ${content}
         </div>
       </div>
     </div>
-  \`;
+  `;
 }
 
 function renderDisclosure() {
-  return \`
+  return `
     <div class="page" id="page-disclosure">
       <div class="container" style="max-width: 800px; padding-top: 60px; padding-bottom: 80px;">
         <h1 class="t-hero">Affiliate Disclosure</h1>
@@ -723,11 +723,11 @@ function renderDisclosure() {
         </div>
       </div>
     </div>
-  \`;
+  `;
 }
 
 function renderPrivacy() {
-  return \`
+  return `
     <div class="page" id="page-privacy">
       <div class="container" style="max-width: 800px; padding-top: 60px; padding-bottom: 80px;">
         <h1 class="t-hero">Privacy Policy</h1>
@@ -736,7 +736,7 @@ function renderPrivacy() {
         </div>
       </div>
     </div>
-  \`;
+  `;
 }
 
 // --- EXPOSE GLOBALS FOR INLINE HANDLERS ---
