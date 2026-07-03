@@ -1,0 +1,17 @@
+{
+  "name": "microbiome-living-lab",
+  "version": "1.0.0",
+  "description": "Affiliate app and management hub for household microbiome products",
+  "main": "site/app.js",
+  "scripts": {
+    "dev": "npx -y http-server site -p 3000 -o"
+  },
+  "keywords": [
+    "microbiome",
+    "affiliate",
+    "shopee",
+    "vietnam"
+  ],
+  "author": "",
+  "license": "ISC"
+}

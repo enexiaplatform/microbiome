@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Microbiome Living Lab — Cleaner Air, Healthier Homes, Better Wellness</title>
-  <meta name="description" content="Discover science-backed microbiome products for air, home, oral, and gut health. Clean does not mean sterile — the future of health is microbial balance.">
+  <title>Microbiome Living Lab — Cân Bằng Vi Sinh Gia Đình</title>
+  <meta name="description" content="Khám phá các sản phẩm vi sinh gia đình đã được chứng minh y khoa cho sức khỏe răng miệng, hô hấp, nhà cửa và tiêu hóa. Sạch không có nghĩa là vô trùng.">
   
   <!-- Open Graph / Social SEO -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Microbiome Living Lab">
-  <meta property="og:description" content="Discover science-backed microbiome products for air, home, oral, and gut health.">
+  <meta property="og:title" content="Microbiome Living Lab — Cân Bằng Vi Sinh Gia Đình">
+  <meta property="og:description" content="Khám phá các sản phẩm vi sinh gia đình đã được chứng minh y khoa cho sức khỏe răng miệng, hô hấp, nhà cửa và tiêu hóa.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&w=1200&q=80">
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Microbiome Living Lab">
-  <meta name="twitter:description" content="Discover science-backed microbiome products for air, home, oral, and gut health.">
+  <meta name="twitter:description" content="Khám phá các sản phẩm vi sinh gia đình đã được chứng minh y khoa.">
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&w=1200&q=80">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,23 +32,26 @@
         <span>Microbiome Lab</span>
       </a>
       <div class="nav__links">
-        <a class="nav__link active" data-route="/" onclick="navigate('/')">Home</a>
-        <a class="nav__link" data-route="/products" onclick="navigate('/products')">Products</a>
-        <a class="nav__link" data-route="/learn" onclick="navigate('/learn')">Learn</a>
-        <a class="nav__link" data-route="/dashboard" onclick="navigate('/dashboard')">Dashboard</a>
+        <a class="nav__link active" data-route="/" onclick="navigate('/')">Trang Chủ</a>
+        <a class="nav__link" data-route="/products" onclick="navigate('/products')">Sản Phẩm</a>
+        <a class="nav__link" data-route="/learn" onclick="navigate('/learn')">Góc Kiến Thức</a>
+        <a class="nav__link" data-route="/dashboard" onclick="navigate('/dashboard')">Founder Hub</a>
       </div>
-      <button class="nav__hamburger" id="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
+      <div style="display:flex; align-items:center; gap:8px;">
+        <button id="theme-toggle-btn" class="theme-toggle-btn" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+        <button class="nav__hamburger" id="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
   <!-- Mobile Menu -->
   <div class="nav__mobile" id="mobile-menu">
-    <a class="nav__link" data-route="/" onclick="navigate('/')">Home</a>
-    <a class="nav__link" data-route="/products" onclick="navigate('/products')">Products</a>
-    <a class="nav__link" data-route="/learn" onclick="navigate('/learn')">Learn</a>
-    <a class="nav__link" data-route="/dashboard" onclick="navigate('/dashboard')">Dashboard</a>
+    <a class="nav__link" data-route="/" onclick="navigate('/')">Trang Chủ</a>
+    <a class="nav__link" data-route="/products" onclick="navigate('/products')">Sản Phẩm</a>
+    <a class="nav__link" data-route="/learn" onclick="navigate('/learn')">Góc Kiến Thức</a>
+    <a class="nav__link" data-route="/dashboard" onclick="navigate('/dashboard')">Founder Hub</a>
   </div>
 
   <!-- App Mount Point -->
@@ -58,15 +61,17 @@
   <footer class="footer">
     <div class="container">
       <p><strong>Microbiome Living Lab</strong></p>
-      <p>Clean does not mean sterile. The future of health is microbiome balance.</p>
+      <p>Sạch không có nghĩa là vô trùng. Tương lai của sức khỏe là cân bằng vi sinh.</p>
       <p style="margin-top:12px;">
-        © 2026 Microbiome Living Lab. Educational content only.
-        <a onclick="navigate('/disclosure')" style="cursor:pointer; margin-left:12px;">Affiliate Disclosure</a>
-        <a onclick="navigate('/privacy')" style="cursor:pointer; margin-left:12px;">Privacy Policy</a>
+        © 2026 Microbiome Living Lab. Tài liệu chỉ nhằm mục đích giáo dục và thông tin.
+        <a onclick="navigate('/disclosure')" style="cursor:pointer; margin-left:12px;">Tuyên Bố Tiếp Thị Liên Kết</a>
+        <a onclick="navigate('/privacy')" style="cursor:pointer; margin-left:12px;">Chính Sách Bảo Mật</a>
       </p>
     </div>
   </footer>
 
+  <script src="config.js"></script>
+  <script src="data.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

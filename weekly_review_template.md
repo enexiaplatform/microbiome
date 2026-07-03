@@ -1,63 +1,63 @@
-# Weekly Review Template
+# Mẫu Đánh Giá Tuần (Weekly Review)
 
-Week of:
+**Tuần ngày:**
 
-## 1. Weekly Snapshot
+## 1. Chỉ số tổng quan (Weekly Snapshot)
 
-| Metric | Result | Notes |
+| Chỉ số | Kết quả | Ghi chú |
 |---|---:|---|
-| Total content pieces published |  |  |
-| Total views |  |  |
-| Total clicks |  |  |
-| Total orders |  |  |
-| Total revenue |  |  |
-| Click-through rate |  | Clicks / Views |
-| Conversion rate |  | Orders / Clicks |
-| Revenue per content piece |  | Revenue / Content pieces |
+| Tổng số bài đăng / video đã xuất bản |  |  |
+| Tổng lượt xem (Views) |  |  |
+| Tổng lượt nhấn (Clicks) |  |  |
+| Tổng đơn hàng (Orders) |  |  |
+| Tổng doanh thu tạm tính |  |  |
+| Tỷ lệ nhấp (CTR) |  | Clicks / Views |
+| Tỷ lệ chuyển đổi (CR) |  | Orders / Clicks |
+| Doanh thu trung bình trên mỗi bài viết |  | Revenue / Content pieces |
 
-## 2. Best Content Angle
+## 2. Góc tiếp cận nội dung hiệu quả nhất (Best Content Angle)
 
-| Content angle | Evidence | Why it worked |
+| Góc nội dung / Tiêu đề | Minh chứng (Evidence) | Lý do thành công |
 |---|---|---|
 |  |  |  |
 
-## 3. Best Product Category
+## 3. Phân tích theo danh mục sản phẩm (Best Product Category)
 
-| Category | Clicks | Orders | Revenue | Notes |
+| Danh mục | Số lượt click | Đơn hàng | Doanh thu | Ghi chú |
 |---|---:|---:|---:|---|
 |  |  |  |  |  |
 
-## 4. Top Converting Products
+## 4. Top các sản phẩm chuyển đổi tốt nhất (Top Converting Products)
 
-| Product | Category | Clicks | Orders | Revenue | Conversion rate | Decision |
+| Sản phẩm | Danh mục | Số lượt click | Đơn hàng | Doanh thu | Tỷ lệ chuyển đổi (CR) | Quyết định |
 |---|---|---:|---:|---:|---:|---|
 |  |  |  |  |  |  |  |
 
-## 5. Worst Performing Topics
+## 5. Nội dung / Góc tiếp cận kém hiệu quả nhất (Worst Performing Topics)
 
-| Topic or angle | Evidence | Possible reason | Decision |
+| Chủ đề / Góc tiếp cận | Minh chứng | Lý do chính | Quyết định |
 |---|---|---|---|
-|  |  |  | Stop / Rewrite / Retest |
+|  |  |  | Dừng / Viết lại / Test lại |
 
-## 6. Recommended Next Tests
+## 6. Đề xuất thử nghiệm tiếp theo (Recommended Next Tests)
 
-| Test | Product or category | Content angle | Success metric | Owner | Due date |
+| Thử nghiệm | Sản phẩm / Danh mục | Góc nội dung | Chỉ số thành công kỳ vọng | Người phụ trách | Hạn hoàn thành |
 |---|---|---|---|---|---|
 |  |  |  |  |  |  |
 
-## 7. Decisions
+## 7. Các quyết định chiến lược (Decisions)
 
-- Products to promote more:
-- Products to pause:
-- Content angles to repeat:
-- Content angles to stop:
-- New products to research:
+- Sản phẩm cần đẩy mạnh:
+- Sản phẩm cần tạm dừng/pause:
+- Góc nội dung cần lặp lại (scale-up):
+- Góc nội dung cần dừng lại:
+- Sản phẩm mới cần nghiên cứu thêm:
 
-## 8. Next Week Focus
+## 8. Trọng tâm tuần tới (Next Week Focus)
 
-Primary goal:
+**Mục tiêu chính:**
 
-Top 3 actions:
+**Top 3 hành động cần làm:**
 
 1.
 2.

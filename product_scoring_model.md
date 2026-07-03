@@ -1,62 +1,63 @@
-# Product Scoring Model
+# Mô Hình Tính Điểm Sản Phẩm (Product Scoring Model)
 
-Use this model to quickly compare affiliate products before creating content around them.
+Sử dụng mô hình này để nhanh chóng so sánh và đánh giá các sản phẩm tiếp thị liên kết trước khi lên kịch bản sản xuất nội dung.
 
-Score each factor from 1 to 5.
+Đánh giá mỗi yếu tố theo thang điểm từ 1 đến 5.
 
-| Score | Meaning |
+| Điểm | Ý nghĩa |
 |---|---|
-| 1 | Weak fit |
-| 2 | Below average |
-| 3 | Acceptable test candidate |
-| 4 | Strong opportunity |
-| 5 | Excellent priority candidate |
+| 1 | Mức độ phù hợp yếu |
+| 2 | Dưới trung bình |
+| 3 | Ứng viên thử nghiệm chấp nhận được |
+| 4 | Cơ hội tốt / Tiềm năng mạnh |
+| 5 | Ứng viên ưu tiên xuất sắc |
 
-## Scoring Factors
+## Các Yếu Tố Tính Điểm (Scoring Factors)
 
-| Factor | What to Measure | 1 | 3 | 5 |
+| Yếu tố | Tiêu chí Đo lường | 1 điểm | 3 điểm | 5 điểm |
 |---|---|---|---|---|
-| Pain intensity | How urgent or emotionally strong the customer problem is | Mild curiosity | Noticeable recurring problem | Urgent daily pain or high anxiety |
-| Content potential | How many useful content angles can be created | Few angles | Several educational angles | Many hooks, myths, comparisons, routines, and stories |
-| Scientific credibility | Strength of evidence, transparency, and claims quality | Vague claims | Some credible support | Strong evidence, transparent ingredients, clear mechanism |
-| Marketplace availability | How easy it is for customers to buy through affiliate channels | Hard to find | Available on one major platform | Easy to buy across trusted platforms |
-| Commission potential | Expected affiliate payout value | Low payout | Moderate payout | High commission or strong average order value |
-| Differentiation | How distinct the product is versus common alternatives | Generic | Some unique positioning | Clear, defensible difference |
-| Repeat purchase potential | Likelihood of recurring orders | One-time purchase | Occasional reorder | Monthly or habit-based reorder |
+| Cường độ nỗi đau | Vấn đề của khách hàng có khẩn cấp hoặc mang cảm xúc mạnh không | Tò mò nhẹ | Vấn đề lặp đi lặp lại dễ thấy | Nỗi đau khẩn cấp hàng ngày / lo âu cao |
+| Tiềm năng nội dung | Có thể tạo ra bao nhiêu góc tiếp cận nội dung hữu ích | Ít góc | Một vài góc giáo dục | Nhiều hook, vạch trần lầm tưởng, so sánh, routine, câu chuyện |
+| Uy tín khoa học | Minh chứng y khoa, tính minh bạch và chất lượng công bố | Tuyên bố mơ hồ | Có nghiên cứu hỗ trợ đáng tin | Bằng chứng lâm sàng mạnh, thành phần minh bạch, cơ chế rõ ràng |
+| Khả dụng trên sàn | Khách hàng mua qua link affiliate dễ dàng như thế nào | Khó tìm mua | Có bán trên một sàn lớn | Dễ dàng mua trên các sàn thương mại điện tử uy tín (Shopee, Lazada...) |
+| Hoa hồng tiềm năng | Giá trị hoa hồng tiếp thị liên kết kỳ vọng nhận được | Hoa hồng thấp | Hoa hồng trung bình | Hoa hồng cao hoặc giá trị đơn hàng trung bình lớn |
+| Điểm khác biệt | Sản phẩm khác biệt như thế nào so với các giải pháp thông thường | Đại trà | Định vị có điểm độc đáo | Khác biệt rõ ràng, khó bắt chước |
+| Khả năng mua lại | Khả năng khách hàng tái đặt hàng sau khi dùng hết | Mua một lần rồi thôi | Thỉnh thoảng mua lại | Mua lại định kỳ hàng tháng / theo thói quen |
 
-## Simple Total Score
+## Tổng Điểm & Quyết Định (Simple Total Score)
 
-Add the seven factor scores together.
+Cộng điểm của cả 7 yếu tố lại với nhau.
 
-Maximum score: 35
+Điểm tối đa: 35 điểm.
 
-| Total Score | Decision |
+| Tổng Điểm | Quyết Định / Hành Động |
 |---|---|
-| 7-14 | Avoid for now |
-| 15-21 | Low-priority test |
-| 22-28 | Good validation candidate |
-| 29-35 | Priority product |
+| 7-14 | Bỏ qua hoặc tạm hoãn |
+| 15-21 | Thử nghiệm ưu tiên thấp |
+| 22-28 | Ứng viên kiểm chứng tốt |
+| 29-35 | Sản phẩm chiến lược / Ưu tiên hàng đầu |
 
-## Suggested Validation Rule
+## Quy Tắc Kiểm Chứng Đề Xuất (Suggested Validation Rule)
 
-A product should usually score at least:
+Một sản phẩm thường nên đạt tối thiểu:
 
-- 4 or higher for pain intensity
-- 3 or higher for scientific credibility
-- 3 or higher for marketplace availability
-- 22 or higher total score
+- 4 điểm trở lên cho Cường độ nỗi đau
+- 3 điểm trở lên cho Uy tín khoa học
+- 3 điểm trở lên cho Khả dụng trên sàn
+- Tổng điểm đạt từ 22 điểm trở lên
 
-If a product has weak science but strong commission, do not prioritize it. Trust is more important than short-term payout in microbiome healthcare.
+> [!IMPORTANT]
+> Nếu sản phẩm có hoa hồng cao nhưng uy tín khoa học yếu, tuyệt đối không ưu tiên. Trong lĩnh vực chăm sóc sức khỏe hệ vi sinh, lòng tin của khách hàng quan trọng hơn nhiều so với hoa hồng ngắn hạn.
 
-## Product Scorecard Template
+## Bảng Điểm Sản Phẩm Mẫu (Product Scorecard Template)
 
-| Product | Pain intensity | Content potential | Scientific credibility | Marketplace availability | Commission potential | Differentiation | Repeat purchase potential | Total | Decision |
+| Sản phẩm | Cường độ nỗi đau | Tiềm năng nội dung | Uy tín khoa học | Khả dụng trên sàn | Hoa hồng tiềm năng | Điểm khác biệt | Khả năng mua lại | Tổng điểm | Quyết định |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---|
 |  |  |  |  |  |  |  |  |  |  |
 
-## Notes For Use
+## Lưu Ý Khi Sử Dụng
 
-- Score products before making content.
-- Re-score products after real click and order data is available.
-- Prioritize products that combine strong pain, credible science, and repeat purchase behavior.
-- Use the content tracker to confirm whether the market actually responds.
+- Tính điểm sản phẩm trước khi viết kịch bản và sản xuất video.
+- Đánh giá lại điểm số sau khi có dữ liệu click và đơn hàng thực tế.
+- Tập trung vào các sản phẩm kết hợp giữa nỗi đau lớn, khoa học uy tín và thói quen mua lại định kỳ.
+- Sử dụng bảng theo dõi chiến dịch để xác nhận xem phản hồi thực tế từ thị trường có đúng như dự đoán không.
