@@ -4,7 +4,7 @@
   "description": "Affiliate app and management hub for household microbiome products",
   "main": "site/app.js",
   "scripts": {
-    "dev": "npx -y http-server site -p 3000 -o"
+    "dev": "npx -y http-server site -p 3000"
   },
   "keywords": [
     "microbiome",
