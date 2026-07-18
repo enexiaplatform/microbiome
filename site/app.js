@@ -1378,7 +1378,7 @@ function searchScience() {
           <h4><a href="https://europepmc.org/article/${a.source}/${a.id}" target="_blank" rel="noopener">${a.title || 'Untitled'}</a></h4>
           <p style="font-size:0.85rem;color:var(--text-muted)">${a.authorString || ''} · ${a.journalTitle || ''} · ${a.pubYear || ''}</p>
           <p style="font-size:0.9rem;margin-top:0.25rem">${(a.abstractText || 'No abstract available.').slice(0, 200)}${a.abstractText?.length > 200 ? '…' : ''}</p>
-          <button class="btn btn--ghost btn--xs" onclick="copyCitation('${(a.title||'').replace(/'/g,'\\\'').substring(0,80)}...', '${a.authorString?.split(',')[0]||''}', '${a.pubYear||''}', '${a.journalTitle||'')}')" style="margin-top:0.5rem">📋 Copy Citation</button>
+          <button class="btn btn--ghost btn--xs" onclick="copyCitation('${(a.title||'').replace(/'/g,'\\\'').substring(0,80)}...', '${a.authorString?.split(',')[0]||''}', '${a.pubYear||''}', '${a.journalTitle||''}')" style="margin-top:0.5rem">📋 Copy Citation</button>
         </div>
       `).join('');
     })
