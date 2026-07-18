@@ -196,8 +196,8 @@ function renderLandingPage() {
 
   const featuredProducts = PRODUCTS.slice(0, 3).map(p => `
     <article class="card reveal" onclick="navigate('/products')" style="cursor:pointer">
-      <div class="card__img-wrap">
-        <img src="${p.image}" alt="${p.name}" class="card__img" loading="lazy" onerror="this.style.display='none'">
+      <div class="card__img">
+        <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'">
         ${p.badge ? `<span class="badge badge--featured">${p.badge}</span>` : ''}
       </div>
       <div class="card__body">
@@ -217,15 +217,30 @@ function renderLandingPage() {
   return `
   <section class="hero">
     <div class="hero__bg"></div>
-    <div class="hero__content container reveal">
-      <div class="hero__eyebrow">🌿 Environmental Probiotics — FDA GRAS · EPA Registered · MADE SAFE®</div>
-      <h1 class="hero__title">Restore the Balance<br><em>of Your Indoor World.</em></h1>
-      <p class="hero__subtitle">You spend 90% of your life indoors. EnviroBiotics probiotic air & surface purifiers outcompete mold, allergens, and harmful bacteria — naturally, continuously, without chemicals.</p>
-      <div class="hero__actions">
-        <a href="https://shop.envirobiotics.com/" target="_blank" rel="noopener" class="btn btn--primary btn--lg">Shop EnviroBiotics →</a>
-        <a href="#/products" class="btn btn--outline btn--lg">See All Products</a>
+    <div class="hero__grid container reveal">
+      <div class="hero__content">
+        <div class="hero__eyebrow">🌿 Environmental Probiotics — FDA GRAS · EPA Registered · MADE SAFE®</div>
+        <h1 class="hero__title">Restore the Balance<br><em>of Your Indoor World.</em></h1>
+        <p class="hero__subtitle">You spend 90% of your life indoors. EnviroBiotics probiotic air & surface purifiers outcompete mold, allergens, and harmful bacteria — naturally, continuously, without chemicals.</p>
+        <div class="hero__actions">
+          <a href="https://shop.envirobiotics.com/" target="_blank" rel="noopener" class="btn btn--primary btn--lg">Shop EnviroBiotics →</a>
+          <a href="#/products" class="btn btn--outline btn--lg">See All Products</a>
+        </div>
+        ${certBadges}
       </div>
-      ${certBadges}
+      <div class="hero__visual">
+        <div class="hero__glow"></div>
+        <div class="hero__image-wrap">
+          <img src="images/biologic_mini.png" alt="BioLogic Mini Probiotic Purifier" />
+        </div>
+        <div class="hero__float-card">
+          <span class="hero__float-icon">🌱</span>
+          <div class="hero__float-text">
+            <strong>Active Probiotic Mist</strong>
+            <span>Continuous Surface Defense</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -413,8 +428,8 @@ function renderProductsPage() {
 
   const productCards = PRODUCTS.map(p => `
     <article class="card reveal" data-category="${p.category}">
-      <div class="card__img-wrap">
-        <img src="${p.image}" alt="${p.name}" class="card__img" loading="lazy" onerror="this.style.display='none'">
+      <div class="card__img">
+        <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'">
         ${p.badge ? `<span class="badge badge--featured">${p.badge}</span>` : ''}
         <span class="card__coverage">${p.coverage}</span>
       </div>
