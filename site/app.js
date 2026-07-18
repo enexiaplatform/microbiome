@@ -961,7 +961,7 @@ function importCampaignCSV(input) {
 
 function renderViewsChart(camps) {
   if (!camps.length) return '<p style="color:var(--text-muted);text-align:center;padding:2rem">No data yet. Add your first campaign.</p>';
-  const maxV = Math.max(...camps.map(c => c.views));
+  const maxV = Math.max(...camps.map(c => c.views)) || 1;
   const w = 600, h = 120, pad = 30;
   const pts = camps.map((c, i) => {
     const x = pad + (i / Math.max(camps.length - 1, 1)) * (w - pad * 2);
@@ -1280,7 +1280,7 @@ function generateReview() {
   const totalRevenue = camps.reduce((s,c) => s+(c.revenue||0), 0);
   const avgCTR = totalViews ? ((totalClicks/totalViews)*100).toFixed(2) : '0.00';
   const avgCR = totalClicks ? ((totalOrders/totalClicks)*100).toFixed(2) : '0.00';
-  const bestCamp = camps.sort((a,b) => (b.views||0)-(a.views||0))[0];
+  const bestCamp = [...camps].sort((a,b) => (b.views||0)-(a.views||0))[0];
   const topProduct = camps.reduce((acc,c) => { acc[c.product] = (acc[c.product]||0)+(c.orders||0); return acc; }, {});
   const topProd = Object.entries(topProduct).sort((a,b)=>b[1]-a[1])[0]?.[0] || 'N/A';
 

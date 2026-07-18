@@ -374,17 +374,29 @@ const defaultOnboarding = [
 ];
 
 // --- APP STATE ---
+function safeJsonParse(key, defaultValue) {
+  try {
+    const val = localStorage.getItem(key);
+    return val ? JSON.parse(val) : defaultValue;
+  } catch (e) {
+    console.error("Failed to parse localStorage key:", key, e);
+    return defaultValue;
+  }
+}
+
+const defaultCampaigns = [
+  { date: '2026-07-01', platform: 'TikTok', title: 'Your HEPA filter doesn\'t clean surfaces', hook: 'problem', category: 'room', product: 'Biotica 800', views: 18200, likes: 1240, saves: 890, comments: 156, clicks: 412, orders: 6, revenue: 1494, lesson: 'Surface allergen angle outperforms air quality angle 3:1', next: 'Test myth-busting version of same script' },
+  { date: '2026-07-05', platform: 'Instagram Reels', title: 'I replaced chemical sprays with probiotics', hook: 'myth', category: 'portable', product: 'BioLogic Mini', views: 31500, likes: 2800, saves: 1650, comments: 287, clicks: 820, orders: 9, revenue: 891, lesson: '"Chemical-free" messaging resonates strongly with mothers 25–45', next: 'Create "mom-focused" version with child safety angle' },
+  { date: '2026-07-10', platform: 'YouTube Shorts', title: 'What\'s actually in your HVAC ducts', hook: 'science', category: 'home', product: 'E Biotic Home', views: 9400, likes: 580, saves: 340, comments: 72, clicks: 198, orders: 2, revenue: 1198, lesson: 'Higher price point needs longer content format — move to long-form YouTube', next: 'Film 5-min explainer video for YouTube proper' },
+];
+
 const appState = {
   theme: localStorage.getItem('theme') || 'light',
   quiz: { answers: {}, step: 0, complete: false },
-  campaigns: JSON.parse(localStorage.getItem('campaigns') || 'null') || [
-    { date: '2026-07-01', platform: 'TikTok', title: 'Your HEPA filter doesn\'t clean surfaces', hook: 'problem', category: 'room', product: 'Biotica 800', views: 18200, likes: 1240, saves: 890, comments: 156, clicks: 412, orders: 6, revenue: 1494, lesson: 'Surface allergen angle outperforms air quality angle 3:1', next: 'Test myth-busting version of same script' },
-    { date: '2026-07-05', platform: 'Instagram Reels', title: 'I replaced chemical sprays with probiotics', hook: 'myth', category: 'portable', product: 'BioLogic Mini', views: 31500, likes: 2800, saves: 1650, comments: 287, clicks: 820, orders: 9, revenue: 891, lesson: '"Chemical-free" messaging resonates strongly with mothers 25–45', next: 'Create "mom-focused" version with child safety angle' },
-    { date: '2026-07-10', platform: 'YouTube Shorts', title: 'What\'s actually in your HVAC ducts', hook: 'science', category: 'home', product: 'E Biotic Home', views: 9400, likes: 580, saves: 340, comments: 72, clicks: 198, orders: 2, revenue: 1198, lesson: 'Higher price point needs longer content format — move to long-form YouTube', next: 'Film 5-min explainer video for YouTube proper' },
-  ],
+  campaigns: safeJsonParse('campaigns', defaultCampaigns),
   savedScores: {},
-  checklistItems: JSON.parse(localStorage.getItem('onboarding') || 'null') || defaultOnboarding.map(i => ({ ...i })),
-  customLinks: JSON.parse(localStorage.getItem('customLinks') || '{}'),
+  checklistItems: safeJsonParse('onboarding', null) || defaultOnboarding.map(i => ({ ...i })),
+  customLinks: safeJsonParse('customLinks', {}),
   dashboardTab: 'kpi',
 };
 
