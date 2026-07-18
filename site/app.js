@@ -537,22 +537,54 @@ function renderQuizResult(container) {
   const prod = PRODUCTS.find(p => p.id === recommended) || PRODUCTS[0];
   const secondary = PRODUCTS.filter(p => p.id !== recommended).slice(0, 2);
 
+  const promoBadge = appState.promoCode 
+    ? `<div class="card__promo" style="margin-bottom: 1rem">🎟️ Extra Savings: Use code <strong>${appState.promoCode}</strong></div>`
+    : '';
+
   container.innerHTML = `
-    <div class="quiz__result reveal">
-      <div class="quiz__result-badge">🎯 Your Match</div>
-      <h3 class="quiz__result-title">${prod.name}</h3>
-      <p class="quiz__result-desc">${prod.mechanism}</p>
-      <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:1.5rem">
-        <a href="${prod.shopUrl}" target="_blank" rel="noopener" class="btn btn--primary redirect-affiliate"
-           data-product-id="${prod.id}" data-product="${prod.name}">Shop ${prod.name} →</a>
+    <div class="quiz__result reveal" style="max-width: 680px; margin: 0 auto; padding: 2rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg)">
+      <div class="quiz__result-badge" style="display:inline-block; font-size:0.75rem; font-weight:700; background:var(--primary-light); color:var(--primary); padding:0.3rem 0.75rem; border-radius:var(--radius-full); margin-bottom:1.5rem; text-transform:uppercase; letter-spacing:0.05em">🎯 Best Match Determined</div>
+      
+      <div class="quiz__result-grid" style="display:grid; grid-template-columns:1fr; gap:1.5rem; text-align:left">
+        <div style="display:flex; gap:1.5rem; align-items:center; flex-wrap:wrap">
+          <img src="${prod.image}" alt="${prod.name}" style="width:120px; height:120px; object-fit:cover; border-radius:var(--radius); border:1px solid var(--border)" onerror="this.style.display='none'">
+          <div style="flex:1; min-width:200px">
+            <h3 style="font-family:'Montserrat',var(--font); font-size:1.4rem; font-weight:700; margin:0 0 0.25rem">${prod.name}</h3>
+            <p style="color:var(--primary); font-weight:600; font-size:0.9rem; margin:0 0 0.5rem">${prod.tagline}</p>
+            <div style="font-size:0.85rem; color:#f6ad55; margin-bottom:0.5rem">
+              ${'★'.repeat(Math.floor(prod.trustScore))} <span style="color:var(--text-muted)">(${prod.trustScore}/5 Rating)</span>
+            </div>
+            <div style="font-size:1.15rem; font-weight:700; color:var(--text)">${prod.price}</div>
+          </div>
+        </div>
+        
+        <div style="border-top:1px solid var(--border); padding-top:1.25rem">
+          <p style="font-size:0.95rem; line-height:1.6; color:var(--text-secondary); margin-bottom:1rem">${prod.mechanism}</p>
+          ${promoBadge}
+          <ul style="padding-left:1.2rem; margin:0 0 1.5rem; color:var(--text-secondary); font-size:0.9rem; display:grid; grid-template-columns:1fr; gap:0.4rem">
+            ${prod.features.slice(0, 3).map(f => `<li style="list-style:none">✓ ${f}</li>`).join('')}
+          </ul>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:0.75rem; flex-wrap:wrap; justify-content:center; border-top:1px solid var(--border); padding-top:1.5rem; margin-top:1rem">
+        <a href="${prod.cartUrl}" target="_blank" rel="noopener" class="btn btn--primary redirect-affiliate"
+           data-product-id="${prod.id}" data-product="${prod.name}" style="padding:0.75rem 1.75rem">Order ${prod.name} →</a>
         <button class="btn btn--outline" onclick="resetQuiz()">Retake Quiz</button>
       </div>
-      <div style="margin-top:2rem">
-        <p style="text-align:center;color:var(--text-muted);font-size:0.9rem;margin-bottom:1rem">Also worth considering:</p>
-        <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center">
+
+      <div style="margin-top:2rem; text-align:left; border-top:1px solid var(--border); padding-top:1.5rem">
+        <p style="color:var(--text-muted); font-size:0.85rem; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.75rem">Other options worth considering:</p>
+        <div style="display:flex; flex-direction:column; gap:0.75rem">
           ${secondary.map(p => `
-            <a href="${p.shopUrl}" target="_blank" rel="noopener" class="btn btn--ghost redirect-affiliate"
-               data-product-id="${p.id}" data-product="${p.name}">${p.name} — ${p.tagline}</a>
+            <div style="display:flex; justify-content:space-between; align-items:center; background:var(--bg); padding:0.75rem 1rem; border-radius:var(--radius); border:1px solid var(--border)">
+              <div>
+                <strong style="font-size:0.9rem">${p.name}</strong>
+                <span style="font-size:0.8rem; color:var(--text-muted); margin-left:0.5rem">(${p.price})</span>
+              </div>
+              <a href="${p.cartUrl}" target="_blank" rel="noopener" class="btn btn--ghost btn--sm redirect-affiliate"
+                 data-product-id="${p.id}" data-product="${p.name}">Buy →</a>
+            </div>
           `).join('')}
         </div>
       </div>
