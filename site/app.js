@@ -26,8 +26,28 @@ function updateActiveNav(route) {
   });
 }
 
+function checkTrackingParams() {
+  const urlParams = new URLSearchParams(window.location.search);
+  let subid = urlParams.get('subid') || urlParams.get('sub');
+  if (!subid && window.location.hash.includes('?')) {
+    const hashQuery = window.location.hash.split('?')[1];
+    const hashParams = new URLSearchParams(hashQuery);
+    subid = hashParams.get('subid') || hashParams.get('sub');
+  }
+  if (subid) {
+    sessionStorage.setItem('affiliate_subid', subid);
+    appState.subid = subid;
+  } else {
+    appState.subid = sessionStorage.getItem('affiliate_subid') || '';
+  }
+}
+
 function initRouter() {
-  window.addEventListener('hashchange', render);
+  checkTrackingParams();
+  window.addEventListener('hashchange', () => {
+    checkTrackingParams();
+    render();
+  });
   render();
 }
 
@@ -93,14 +113,31 @@ function triggerRedirect(name, url) {
     document.body.appendChild(modal);
   }
 
+  // Sub-ID Propagation
+  let finalUrl = url;
+  const subid = appState.subid;
+  if (subid) {
+    const separator = finalUrl.includes('?') ? '&' : '?';
+    finalUrl = `${finalUrl}${separator}subid=${encodeURIComponent(subid)}`;
+  }
+
+  const promoNotice = appState.promoCode 
+    ? `<div style="margin-top:1rem;padding:0.75rem;background:var(--primary-light);border-radius:var(--radius);font-weight:600;color:var(--primary);font-size:0.85rem">
+         🎟️ Remember to use promo code:<br>
+         <span style="font-size:1.1rem;letter-spacing:0.05em;color:var(--primary-dark)">${appState.promoCode}</span>
+       </div>`
+    : '';
+
   modal.innerHTML = `
     <div class="redirect-card">
       <div class="spinner" style="width:40px;height:40px;margin:0 auto 1.5rem"></div>
       <div class="redirect-badge">🔒 SECURE AFFILIATE CONNECTION</div>
       <h3>Connecting to EnviroBiotics</h3>
       <p>Redirecting you to the official store to view <strong>${name}</strong>.</p>
-      <div class="redirect-countdown">Redirecting in <span id="redirect-timer">2</span>s...</div>
-      <div style="font-size:0.75rem;color:var(--text-muted);margin-top:1.5rem">Special tracking and 30-day risk-free trial benefits applied.</div>
+      ${promoNotice}
+      <div class="redirect-countdown" style="margin-top:1.25rem">Redirecting in <span id="redirect-timer">2</span>s...</div>
+      ${subid ? `<div style="font-size:0.72rem;color:var(--text-muted);margin-top:0.75rem">Campaign Tracker ID: <code>${subid}</code></div>` : ''}
+      <div style="font-size:0.75rem;color:var(--text-muted);margin-top:1rem">Special tracking and 30-day risk-free trial benefits applied.</div>
     </div>
   `;
   modal.style.display = 'flex';
@@ -113,7 +150,7 @@ function triggerRedirect(name, url) {
     if (timeLeft <= 0) {
       clearInterval(interval);
       modal.style.display = 'none';
-      window.open(url, '_blank');
+      window.open(finalUrl, '_blank');
     }
   }, 1000);
 }
@@ -229,25 +266,31 @@ function renderLandingPage() {
     </div>
   `;
 
-  const featuredProducts = PRODUCTS.slice(0, 3).map(p => `
-    <article class="card reveal" onclick="navigate('/products')" style="cursor:pointer">
-      <div class="card__img">
-        <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'">
-        ${p.badge ? `<span class="badge badge--featured">${p.badge}</span>` : ''}
-      </div>
-      <div class="card__body">
-        <span class="badge badge--${CATEGORIES.find(c=>c.id===p.category)?.color || 'green'}">${CATEGORIES.find(c=>c.id===p.category)?.icon || ''} ${CATEGORIES.find(c=>c.id===p.category)?.label || p.category}</span>
-        <h3 class="t-h3">${p.name}</h3>
-        <p class="card__tagline">${p.tagline}</p>
-        <p class="card__text">${p.painPoint.substring(0, 100)}…</p>
-        <div class="card__footer">
-          <span class="card__price">${p.price}</span>
-          <a href="${p.cartUrl}" target="_blank" rel="noopener" class="btn btn--primary btn--sm redirect-affiliate"
-             data-product-id="${p.id}" data-product="${p.name}">Buy Now →</a>
+  const featuredProducts = PRODUCTS.slice(0, 3).map(p => {
+    const promoBadge = appState.promoCode 
+      ? `<div class="card__promo">🎟️ Code: <strong>${appState.promoCode}</strong></div>`
+      : '';
+    return `
+      <article class="card reveal" onclick="navigate('/products')" style="cursor:pointer">
+        <div class="card__img">
+          <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'">
+          ${p.badge ? `<span class="badge badge--featured">${p.badge}</span>` : ''}
         </div>
-      </div>
-    </article>
-  `).join('');
+        <div class="card__body">
+          <span class="badge badge--${CATEGORIES.find(c=>c.id===p.category)?.color || 'green'}">${CATEGORIES.find(c=>c.id===p.category)?.icon || ''} ${CATEGORIES.find(c=>c.id===p.category)?.label || p.category}</span>
+          <h3 class="t-h3">${p.name}</h3>
+          <p class="card__tagline">${p.tagline}</p>
+          ${promoBadge}
+          <p class="card__text">${p.painPoint.substring(0, 100)}…</p>
+          <div class="card__footer">
+            <span class="card__price">${p.price}</span>
+            <a href="${p.cartUrl}" target="_blank" rel="noopener" class="btn btn--primary btn--sm redirect-affiliate"
+               data-product-id="${p.id}" data-product="${p.name}">Buy Now →</a>
+          </div>
+        </div>
+      </article>
+    `;
+  }).join('');
 
   return `
   <section class="hero">
@@ -536,17 +579,22 @@ function renderProductsPage() {
     </div>
   `;
 
-  const productCards = PRODUCTS.map(p => `
-    <article class="card reveal" data-category="${p.category}">
-      <div class="card__img">
-        <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'">
-        ${p.badge ? `<span class="badge badge--featured">${p.badge}</span>` : ''}
-        <span class="card__coverage">${p.coverage}</span>
-      </div>
-      <div class="card__body">
-        <span class="badge badge--${CATEGORIES.find(c=>c.id===p.category)?.color || 'green'}">${CATEGORIES.find(c=>c.id===p.category)?.icon || ''} ${CATEGORIES.find(c=>c.id===p.category)?.label || p.category}</span>
-        <h3 class="t-h3">${p.name}</h3>
-        <p class="card__tagline">${p.tagline}</p>
+  const productCards = PRODUCTS.map(p => {
+    const promoBadge = appState.promoCode 
+      ? `<div class="card__promo">🎟️ Promo Code: <strong>${appState.promoCode}</strong></div>`
+      : '';
+    return `
+      <article class="card reveal" data-category="${p.category}">
+        <div class="card__img">
+          <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'">
+          ${p.badge ? `<span class="badge badge--featured">${p.badge}</span>` : ''}
+          <span class="card__coverage">${p.coverage}</span>
+        </div>
+        <div class="card__body">
+          <span class="badge badge--${CATEGORIES.find(c=>c.id===p.category)?.color || 'green'}">${CATEGORIES.find(c=>c.id===p.category)?.icon || ''} ${CATEGORIES.find(c=>c.id===p.category)?.label || p.category}</span>
+          <h3 class="t-h3">${p.name}</h3>
+          <p class="card__tagline">${p.tagline}</p>
+          ${promoBadge}
         <div class="card__trust">
           ${'★'.repeat(Math.floor(p.trustScore))} <span>${p.trustScore}/5</span>
         </div>
@@ -566,8 +614,8 @@ function renderProductsPage() {
           </div>
         </div>
       </div>
-    </article>
-  `).join('');
+    `;
+  }).join('');
 
   const kitsSection = `
     <section class="section section--alt" id="kits-section">
@@ -710,7 +758,16 @@ function openProductModal(productId) {
         </div>
         ${angles.map((a, i) => {
           const s = scripts[a] || {};
-          const fullScript = `HOOK:\n${s.hook||''}\n\nVISUAL DIRECTION:\n${s.visual||''}\n\nVOICEOVER:\n${s.vo||''}\n\nFILMING TIPS:\n${(s.tips||[]).map((t,i)=>`${i+1}. ${t}`).join('\n')}\n\nCTA:\n${s.cta||''}`;
+          const promo = appState.promoCode || 'YOUR_CODE';
+          const bio = appState.bioLink || 'link in bio';
+          
+          let voText = s.vo || '';
+          voText = voText.replace(/\[PROMO CODE\]/g, promo).replace(/link in bio/g, bio);
+          
+          let ctaText = s.cta || '';
+          ctaText = ctaText.replace(/\[PROMO CODE\]/g, promo).replace(/link in bio/g, bio);
+
+          const fullScript = `HOOK:\n${s.hook||''}\n\nVISUAL DIRECTION:\n${s.visual||''}\n\nVOICEOVER:\n${voText}\n\nFILMING TIPS:\n${(s.tips||[]).map((t,i)=>`${i+1}. ${t}`).join('\n')}\n\nCTA:\n${ctaText}`;
           return `
             <div class="script-panel ${i===0?'':'hidden'}" id="script-${a}">
               <div class="script-meta">
@@ -722,7 +779,7 @@ function openProductModal(productId) {
               </div>
               <div class="script-block">
                 <label>Voiceover Script</label>
-                <p>${s.vo || 'N/A'}</p>
+                <p>${voText || 'N/A'}</p>
               </div>
               <div class="script-block">
                 <label>Filming Tips</label>
@@ -730,11 +787,11 @@ function openProductModal(productId) {
               </div>
               <div class="script-block">
                 <label>CTA</label>
-                <p>${s.cta || 'N/A'}</p>
+                <p>${ctaText || 'N/A'}</p>
               </div>
               <div class="script-actions">
                 <button class="btn btn--ghost btn--sm" onclick="copyScript(\`${fullScript.replace(/`/g,'\\`')}\`)">📋 Copy Full Script</button>
-                <span class="script-words" style="font-size:0.8rem;color:var(--text-muted)">~${Math.round((s.vo||'').split(' ').length / 130 * 60)}s speaking time</span>
+                <span class="script-words" style="font-size:0.8rem;color:var(--text-muted)">~${s.vo ? Math.round(s.vo.split(' ').length / 130 * 60) : 0}s speaking time</span>
               </div>
             </div>
           `;
@@ -1257,7 +1314,7 @@ function renderScriptHubTab() {
     <div class="script-hub">
       <h3>Video Script Generator</h3>
       <p style="color:var(--text-muted);margin-bottom:1.5rem">Generate and customize content scripts for TikTok, Instagram Reels, and YouTube Shorts.</p>
-      <div class="form-grid">
+      <div class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem">
         <div class="form-group">
           <label>Select Product</label>
           <select id="sh-product" class="form-input" onchange="loadScript()">
@@ -1273,13 +1330,37 @@ function renderScriptHubTab() {
           </select>
         </div>
       </div>
-      <div id="script-preview" class="script-preview-box"></div>
+      <div class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed var(--border)">
+        <div class="form-group">
+          <label>My Promo Code (Optional)</label>
+          <input type="text" id="sh-promo" class="form-input" placeholder="e.g. ENVIRO10" 
+            value="${appState.promoCode || ''}" oninput="updateScriptPersonalization()">
+        </div>
+        <div class="form-group">
+          <label>My Call-To-Action Link (Optional)</label>
+          <input type="text" id="sh-bio" class="form-input" placeholder="e.g. bio.link/myname" 
+            value="${appState.bioLink || ''}" oninput="updateScriptPersonalization()">
+        </div>
+      </div>
+      <div id="script-preview" class="script-preview-box" style="margin-top:1.5rem"></div>
       <div id="script-editor-area" style="margin-top:1rem"></div>
     </div>
   `;
 }
 
 function initScriptHub() { loadScript(); }
+
+function updateScriptPersonalization() {
+  const promo = document.getElementById('sh-promo')?.value?.trim() || '';
+  const bio = document.getElementById('sh-bio')?.value?.trim() || '';
+  
+  appState.promoCode = promo;
+  appState.bioLink = bio;
+  localStorage.setItem('promoCode', promo);
+  localStorage.setItem('bioLink', bio);
+  
+  loadScript();
+}
 
 function loadScript() {
   const pid = document.getElementById('sh-product')?.value;
@@ -1288,19 +1369,30 @@ function loadScript() {
   const preview = document.getElementById('script-preview');
   const editorArea = document.getElementById('script-editor-area');
   if (!s || !preview) return;
-  const wordCount = s.vo ? s.vo.split(' ').length : 0;
+
+  const promo = appState.promoCode || 'YOUR_CODE';
+  const bio = appState.bioLink || 'link in bio';
+  
+  let voText = s.vo || '';
+  voText = voText.replace(/\[PROMO CODE\]/g, promo).replace(/link in bio/g, bio);
+
+  let ctaText = s.cta || '';
+  ctaText = ctaText.replace(/\[PROMO CODE\]/g, promo).replace(/link in bio/g, bio);
+
+  const wordCount = voText.split(' ').length;
   const speakSecs = Math.round(wordCount / 130 * 60);
+
   preview.innerHTML = `
     <div class="script-block"><label>📌 Hook</label><p>${s.hook}</p></div>
     <div class="script-block"><label>🎥 Visual Direction</label><p>${s.visual}</p></div>
-    <div class="script-block"><label>🎙️ Voiceover</label><p>${s.vo}</p></div>
+    <div class="script-block"><label>🎙️ Voiceover</label><p>${voText}</p></div>
     <div class="script-block"><label>💡 Filming Tips</label><ul>${(s.tips||[]).map(t=>`<li>${t}</li>`).join('')}</ul></div>
-    <div class="script-block"><label>📣 CTA</label><p>${s.cta}</p></div>
+    <div class="script-block"><label>📣 CTA</label><p>${ctaText}</p></div>
     <div class="script-meta">📝 ${wordCount} words · ⏱ ~${speakSecs}s speaking time ${speakSecs > 60 ? '⚠️ Consider trimming for under-60s format' : '✅ Good length'}</div>
   `;
   if (editorArea) editorArea.innerHTML = `
     <label style="font-weight:600;display:block;margin-bottom:0.5rem">✏️ Customize Script</label>
-    <textarea id="script-edit" class="form-input" rows="8">${s.vo}</textarea>
+    <textarea id="script-edit" class="form-input" rows="8">${voText}</textarea>
     <div style="display:flex;gap:0.75rem;margin-top:0.75rem">
       <button class="btn btn--primary btn--sm" onclick="copyEditedScript()">📋 Copy Script</button>
     </div>
@@ -1314,6 +1406,7 @@ function copyEditedScript() {
 
 // --- LINKS TAB ---
 function renderLinksTab() {
+  const base = `${window.location.protocol}//${window.location.host}${window.location.pathname}`;
   return `
     <div class="links-section">
       <h3>Affiliate Link Configuration</h3>
@@ -1331,12 +1424,19 @@ function renderLinksTab() {
           </div>
         `).join('')}
 
-        <div class="form-group" style="margin-top:1.5rem; border-top:1px solid var(--border); padding-top:1.5rem">
-          <label>Standard Commission Rate (%)</label>
-          <div style="display:flex;gap:0.5rem; max-width:200px">
-            <input type="number" id="commission-rate" class="form-input" min="0" max="100" step="0.5"
-              value="${appState.commissionRate || 15}">
-            <span style="display:flex;align-items:center;font-weight:600;color:var(--text-secondary)">%</span>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:1.5rem;margin-top:1.5rem; border-top:1px solid var(--border); padding-top:1.5rem">
+          <div class="form-group">
+            <label>Standard Commission Rate (%)</label>
+            <div style="display:flex;gap:0.5rem; max-width:200px">
+              <input type="number" id="commission-rate" class="form-input" min="0" max="100" step="0.5"
+                value="${appState.commissionRate || 15}">
+              <span style="display:flex;align-items:center;font-weight:600;color:var(--text-secondary)">%</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>My Promo Code (For display on cards)</label>
+            <input type="text" id="promo-code-input" class="form-input" placeholder="e.g. ENVIRO10"
+              value="${appState.promoCode || ''}">
           </div>
         </div>
       </div>
@@ -1344,6 +1444,38 @@ function renderLinksTab() {
         <button class="btn btn--primary" onclick="saveLinks()">Save Links</button>
         <button class="btn btn--ghost" onclick="clearLinks()">Clear All</button>
       </div>
+
+      <div style="margin-top:2.5rem; border-top:1px solid var(--border); padding-top:2rem">
+        <h3>🔗 Custom Campaign Link Builder</h3>
+        <p style="color:var(--text-muted);margin-bottom:1.5rem">Generate custom landing page links to track clicks and orders for different social media campaigns or bio links.</p>
+        
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:1.5rem">
+          <div class="form-group">
+            <label>Campaign Source / Platform</label>
+            <select id="builder-platform" class="form-input" onchange="updateCampaignLinkBuilder()">
+              <option value="tiktok_bio">TikTok Bio Link</option>
+              <option value="ig_reels">Instagram Reels</option>
+              <option value="yt_shorts">YouTube Shorts</option>
+              <option value="email_newsletter">Email Newsletter</option>
+              <option value="custom">Custom ID...</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Sub-ID / Campaign Tag</label>
+            <input type="text" id="builder-subid" class="form-input" placeholder="e.g. tiktok_bio" value="tiktok_bio" oninput="updateCampaignLinkBuilder()">
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top:1.25rem">
+          <label>Your Shareable Campaign Link</label>
+          <div style="display:flex;gap:0.5rem">
+            <input type="text" id="builder-output" class="form-input" readonly style="background:var(--bg);font-family:monospace;font-size:0.88rem"
+              value="${base}?subid=tiktok_bio">
+            <button class="btn btn--ghost btn--sm" onclick="copyBuilderLink()">📋 Copy Link</button>
+          </div>
+        </div>
+      </div>
+
       <div class="links-info" style="margin-top:2rem;padding:1rem;background:var(--primary-light);border-radius:var(--radius);border-left:3px solid var(--primary)">
         <h4 style="margin:0 0 0.5rem">💡 Getting Your Affiliate Links</h4>
         <ol style="margin:0;padding-left:1.2rem;color:var(--text-secondary)">
@@ -1356,7 +1488,30 @@ function renderLinksTab() {
   `;
 }
 
-function initLinks() {}
+function initLinks() {
+  updateCampaignLinkBuilder();
+}
+
+function updateCampaignLinkBuilder() {
+  const platform = document.getElementById('builder-platform')?.value;
+  const subInput = document.getElementById('builder-subid');
+  const output = document.getElementById('builder-output');
+  if (!subInput || !output) return;
+
+  if (platform && platform !== 'custom' && document.activeElement !== subInput) {
+    subInput.value = platform;
+  }
+  
+  const base = `${window.location.protocol}//${window.location.host}${window.location.hash.split('?')[0] || ''}`;
+  const final = subInput.value.trim() || 'campaign';
+  output.value = `${base}?subid=${encodeURIComponent(final)}`;
+}
+
+function copyBuilderLink() {
+  const output = document.getElementById('builder-output');
+  if (!output) return;
+  navigator.clipboard.writeText(output.value).then(() => showToast('Campaign link copied!', '📋'));
+}
 
 function saveLinks() {
   PRODUCTS.forEach(p => {
@@ -1372,6 +1527,10 @@ function saveLinks() {
     localStorage.setItem('commissionRate', rate);
   }
 
+  const promo = document.getElementById('promo-code-input')?.value?.trim() || '';
+  appState.promoCode = promo;
+  localStorage.setItem('promoCode', promo);
+
   showToast('Affiliate configurations saved! Site-wide links updated.', '🔗');
   attachAffiliateListeners();
 }
@@ -1385,6 +1544,11 @@ function clearLinks() {
   if (el) el.value = '15';
   appState.commissionRate = 15;
   localStorage.setItem('commissionRate', 15);
+
+  const promoInput = document.getElementById('promo-code-input');
+  if (promoInput) promoInput.value = '';
+  appState.promoCode = '';
+  localStorage.setItem('promoCode', '');
 
   showToast('Links cleared.', '🗑️');
 }

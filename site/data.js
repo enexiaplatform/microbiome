@@ -398,6 +398,9 @@ const appState = {
   checklistItems: safeJsonParse('onboarding', null) || defaultOnboarding.map(i => ({ ...i })),
   customLinks: safeJsonParse('customLinks', {}),
   commissionRate: parseFloat(localStorage.getItem('commissionRate')) || 15,
+  promoCode: localStorage.getItem('promoCode') || '',
+  bioLink: localStorage.getItem('bioLink') || '',
+  subid: '',
   dashboardTab: 'kpi',
 };
 
