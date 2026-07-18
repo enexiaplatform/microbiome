@@ -67,7 +67,6 @@ function render() {
   if (hb) { hb.removeEventListener('click', toggleMobileMenu); hb.addEventListener('click', toggleMobileMenu); }
 }
 
-// --- AFFILIATE LINK SYSTEM ---
 function attachAffiliateListeners() {
   const merged = Object.assign({}, window.CUSTOM_AFFILIATE_LINKS || {}, appState.customLinks || {});
   document.querySelectorAll('[data-product-id]').forEach(link => {
@@ -75,12 +74,48 @@ function attachAffiliateListeners() {
     if (pid && merged[pid]) link.href = merged[pid];
     if (!link.dataset.listenerAttached) {
       link.dataset.listenerAttached = 'true';
-      link.addEventListener('click', () => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
         const name = link.getAttribute('data-product') || pid || 'this product';
-        showToast(`Redirecting to EnviroBiotics store for ${name}…`, '🛍️');
+        const targetUrl = link.href;
+        triggerRedirect(name, targetUrl);
       });
     }
   });
+}
+
+function triggerRedirect(name, url) {
+  let modal = document.getElementById('redirect-overlay');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'redirect-overlay';
+    modal.className = 'redirect-overlay';
+    document.body.appendChild(modal);
+  }
+
+  modal.innerHTML = `
+    <div class="redirect-card">
+      <div class="spinner" style="width:40px;height:40px;margin:0 auto 1.5rem"></div>
+      <div class="redirect-badge">🔒 SECURE AFFILIATE CONNECTION</div>
+      <h3>Connecting to EnviroBiotics</h3>
+      <p>Redirecting you to the official store to view <strong>${name}</strong>.</p>
+      <div class="redirect-countdown">Redirecting in <span id="redirect-timer">2</span>s...</div>
+      <div style="font-size:0.75rem;color:var(--text-muted);margin-top:1.5rem">Special tracking and 30-day risk-free trial benefits applied.</div>
+    </div>
+  `;
+  modal.style.display = 'flex';
+
+  let timeLeft = 2;
+  const timerEl = document.getElementById('redirect-timer');
+  const interval = setInterval(() => {
+    timeLeft--;
+    if (timerEl) timerEl.textContent = timeLeft;
+    if (timeLeft <= 0) {
+      clearInterval(interval);
+      modal.style.display = 'none';
+      window.open(url, '_blank');
+    }
+  }, 1000);
 }
 
 // ============================================================
@@ -307,6 +342,81 @@ function renderLandingPage() {
       </div>
       <div style="text-align:center;margin-top:2rem">
         <a href="#/products" class="btn btn--outline btn--lg">View All Products →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__header reveal">
+        <h2 class="t-h2">Loved by Families &<br><em>Wellness Advocates</em></h2>
+        <p class="t-body-lg">Real results from verified EnviroBiotics users around the world.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-text">"My morning congestion is completely gone. I used to wake up sneezing every single day. Having the BioLogic Mini on my nightstand has been a total game-changer for my sleep."</p>
+          <div class="testimonial-author">
+            <strong>Sarah M.</strong>
+            <span>Verified Buyer · Bedroom BioLogic Mini</span>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-text">"With two dogs and a cat, our living room dander was out of control. The Biotica 800 cleared the pet dander and pet odor in less than a week. Incredible surface-based tech!"</p>
+          <div class="testimonial-author">
+            <strong>David L.</strong>
+            <span>Verified Buyer · Living Room Biotica 800</span>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-text">"Our basement smelled constantly of mold and moisture. Since installing the whole-home system, the air smells clean and crisp. Highly recommend EnviroBiotics."</p>
+          <div class="testimonial-author">
+            <strong>Robert H.</strong>
+            <span>Verified Buyer · E Biotic Home System</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width: 800px">
+      <div class="section__header reveal">
+        <h2 class="t-h2" style="text-align:center">Frequently Asked<br><em>Questions</em></h2>
+      </div>
+      <div class="faq-accordion reveal">
+        <details class="faq-item">
+          <summary class="faq-question">How are Environmental Probiotics different from HEPA filters?</summary>
+          <div class="faq-answer">
+            <p>Standard HEPA air purifiers only capture airborne particles that pass directly through the filter. However, 80% of indoor allergens (like dust mites, pet dander, and mold spores) live settled on surfaces like carpets, bedding, and counter tops. EnviroBiotics continuously mists microscopic beneficial bacteria that settle on all surfaces, actively consuming organic allergens and outcompeting pathogens where they live.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Are these probiotics safe for children and pets?</summary>
+          <div class="faq-answer">
+            <p>Yes, absolutely. EnviroBiotics uses 100% organic, non-GMO Bacillus strains that are FDA GRAS (Generally Recognized As Safe) certified, EPA Registered, and verified by MADE SAFE®. They are completely non-toxic, chemical-free, and safe for contact with children, dogs, cats, and indoor plants.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">How long does a probiotic refill cartridge last?</summary>
+          <div class="faq-answer">
+            <p>Each refill cartridge provides continuous protection for 30 to 60 days, depending on the device settings. The device will indicate when a replacement is needed. We offer Subscribe & Save cartridge plans to ensure your indoor microbiome shield never drops.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Do these devices require a lot of maintenance?</summary>
+          <div class="faq-answer">
+            <p>No. Unlike air purifiers, there are no filters to clean, wash, or replace. Simply swap out the probiotic cartridge when empty. The BioLogic Mini and Biotica 800 are plug-and-play tabletop devices with minimal power draw.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">What is your return policy and guarantee?</summary>
+          <div class="faq-answer">
+            <p>Every EnviroBiotics device comes with a 30-day money-back guarantee. If you don't notice a significant improvement in your air quality, allergy symptoms, or home freshness within 30 days, simply contact support for a full refund.</p>
+          </div>
+        </details>
       </div>
     </div>
   </section>
@@ -803,13 +913,17 @@ function renderKpiTab() {
   const avgCTR = totalViews ? ((totalClicks/totalViews)*100).toFixed(2) : '0.00';
   const avgCR = totalClicks ? ((totalOrders/totalClicks)*100).toFixed(2) : '0.00';
 
+  const estCommission = totalRevenue * (appState.commissionRate || 15) / 100;
+
   const statCards = [
-    { label: 'Total Views', value: totalViews.toLocaleString(), icon: '👁️', color: 'blue' },
-    { label: 'Total Clicks', value: totalClicks.toLocaleString(), icon: '🖱️', color: 'green' },
-    { label: 'Total Orders', value: totalOrders, icon: '🛍️', color: 'emerald' },
-    { label: 'Est. Revenue', value: `$${totalRevenue.toLocaleString()}`, icon: '💰', color: 'gold' },
-    { label: 'Avg CTR', value: `${avgCTR}%`, icon: '📈', color: avgCTR >= 2 ? 'green' : 'orange', note: 'Target: ≥2%' },
-    { label: 'Avg CR', value: `${avgCR}%`, icon: '🎯', color: avgCR >= 1.5 ? 'green' : 'orange', note: 'Target: ≥1.5%' },
+    { label: 'Total Views', value: totalViews.toLocaleString(), icon: '👁️' },
+    { label: 'Total Clicks', value: totalClicks.toLocaleString(), icon: '🖱️' },
+    { label: 'Total Orders', value: totalOrders, icon: '🛍️' },
+    { label: 'Est. Revenue', value: `$${totalRevenue.toLocaleString()}`, icon: '💰' },
+    { label: 'Commission Rate', value: `${appState.commissionRate || 15}%`, icon: '🏷️', note: 'Configure in Links tab' },
+    { label: 'Est. Earnings', value: `$${estCommission.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`, icon: '💵' },
+    { label: 'Avg CTR', value: `${avgCTR}%`, icon: '📈', note: 'Target: ≥2%' },
+    { label: 'Avg CR', value: `${avgCR}%`, icon: '🎯', note: 'Target: ≥1.5%' },
   ].map(s => `
     <div class="stat-card">
       <div class="stat-card__icon">${s.icon}</div>
@@ -1216,6 +1330,15 @@ function renderLinksTab() {
             </div>
           </div>
         `).join('')}
+
+        <div class="form-group" style="margin-top:1.5rem; border-top:1px solid var(--border); padding-top:1.5rem">
+          <label>Standard Commission Rate (%)</label>
+          <div style="display:flex;gap:0.5rem; max-width:200px">
+            <input type="number" id="commission-rate" class="form-input" min="0" max="100" step="0.5"
+              value="${appState.commissionRate || 15}">
+            <span style="display:flex;align-items:center;font-weight:600;color:var(--text-secondary)">%</span>
+          </div>
+        </div>
       </div>
       <div style="display:flex;gap:0.75rem;margin-top:1.5rem">
         <button class="btn btn--primary" onclick="saveLinks()">Save Links</button>
@@ -1242,7 +1365,14 @@ function saveLinks() {
     else delete appState.customLinks[p.id];
   });
   localStorage.setItem('customLinks', JSON.stringify(appState.customLinks));
-  showToast('Affiliate links saved! All product buttons updated.', '🔗');
+
+  const rate = parseFloat(document.getElementById('commission-rate')?.value);
+  if (!isNaN(rate)) {
+    appState.commissionRate = rate;
+    localStorage.setItem('commissionRate', rate);
+  }
+
+  showToast('Affiliate configurations saved! Site-wide links updated.', '🔗');
   attachAffiliateListeners();
 }
 
@@ -1250,6 +1380,12 @@ function clearLinks() {
   PRODUCTS.forEach(p => { const el = document.getElementById(`link-${p.id}`); if (el) el.value = ''; });
   appState.customLinks = {};
   localStorage.setItem('customLinks', '{}');
+
+  const el = document.getElementById('commission-rate');
+  if (el) el.value = '15';
+  appState.commissionRate = 15;
+  localStorage.setItem('commissionRate', 15);
+
   showToast('Links cleared.', '🗑️');
 }
 
