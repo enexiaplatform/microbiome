@@ -1,63 +1,75 @@
-# Mô Hình Tính Điểm Sản Phẩm (Product Scoring Model)
+# PRODUCT SCORING MODEL (EVALUATION FRAMEWORK)
 
-Sử dụng mô hình này để nhanh chóng so sánh và đánh giá các sản phẩm tiếp thị liên kết trước khi lên kịch bản sản xuất nội dung.
+Use this scoring model to quickly evaluate and compare affiliate products before writing scripts or producing content.
 
-Đánh giá mỗi yếu tố theo thang điểm từ 1 đến 5.
+Rate each factor from 1 to 5 based on the criteria below.
 
-| Điểm | Ý nghĩa |
+| Score | Meaning |
 |---|---|
-| 1 | Mức độ phù hợp yếu |
-| 2 | Dưới trung bình |
-| 3 | Ứng viên thử nghiệm chấp nhận được |
-| 4 | Cơ hội tốt / Tiềm năng mạnh |
-| 5 | Ứng viên ưu tiên xuất sắc |
+| 1 | Poor fit / Low suitability |
+| 2 | Below average |
+| 3 | Acceptable test candidate |
+| 4 | Good opportunity / High potential |
+| 5 | Priority candidate / Excellent fit |
 
-## Các Yếu Tố Tính Điểm (Scoring Factors)
+---
 
-| Yếu tố | Tiêu chí Đo lường | 1 điểm | 3 điểm | 5 điểm |
+## SCORING FACTORS
+
+| Factor | Evaluation Criteria | 1 Point | 3 Points | 5 Points |
 |---|---|---|---|---|
-| Cường độ nỗi đau | Vấn đề của khách hàng có khẩn cấp hoặc mang cảm xúc mạnh không | Tò mò nhẹ | Vấn đề lặp đi lặp lại dễ thấy | Nỗi đau khẩn cấp hàng ngày / lo âu cao |
-| Tiềm năng nội dung | Có thể tạo ra bao nhiêu góc tiếp cận nội dung hữu ích | Ít góc | Một vài góc giáo dục | Nhiều hook, vạch trần lầm tưởng, so sánh, routine, câu chuyện |
-| Uy tín khoa học | Minh chứng y khoa, tính minh bạch và chất lượng công bố | Tuyên bố mơ hồ | Có nghiên cứu hỗ trợ đáng tin | Bằng chứng lâm sàng mạnh, thành phần minh bạch, cơ chế rõ ràng |
-| Khả dụng trên sàn | Khách hàng mua qua link affiliate dễ dàng như thế nào | Khó tìm mua | Có bán trên một sàn lớn | Dễ dàng mua trên các sàn thương mại điện tử uy tín (Shopee, Lazada...) |
-| Hoa hồng tiềm năng | Giá trị hoa hồng tiếp thị liên kết kỳ vọng nhận được | Hoa hồng thấp | Hoa hồng trung bình | Hoa hồng cao hoặc giá trị đơn hàng trung bình lớn |
-| Điểm khác biệt | Sản phẩm khác biệt như thế nào so với các giải pháp thông thường | Đại trà | Định vị có điểm độc đáo | Khác biệt rõ ràng, khó bắt chước |
-| Khả năng mua lại | Khả năng khách hàng tái đặt hàng sau khi dùng hết | Mua một lần rồi thôi | Thỉnh thoảng mua lại | Mua lại định kỳ hàng tháng / theo thói quen |
+| **Pain Intensity** | How acute, emotional, or urgent is the customer's problem? | Mild curiosity | Recurring annoyance | Daily struggle / High anxiety |
+| **Content Potential** | How easy is it to generate engaging, viral-ready short-form hooks? | Hard to visualize | Some educational angles | Visual hooks, unboxing, comparison, routines |
+| **Scientific Credibility** | Clinical backing, ingredient transparency, and official safety stamps. | Vague claims | Reliable third-party studies | Strong clinical trials, EPA/FDA stamps, clear science |
+| **Market Availability** | How friction-free is the global purchase flow for the audience? | Hard to buy/find | Sold on one regional platform | In stock on official Shopify global store with international shipping |
+| **Commission Potential** | Expected affiliate commission rate × average order value (AOV). | Low commission / Low AOV | Average commission & ticket | High ticket (HVAC systems) or high recurring commission rate |
+| **Differentiation** | How unique is this product compared to generic, off-the-shelf alternatives? | Commodity / Generic | Some unique brand features | Clear competitive edge, patented tech, hard to replicate |
+| **Repeat Purchase** | Likelihood of recurring sales (consumables, subscriptions). | One-time purchase | Occasional rebuys | Mandatory 30-60 day refills (Subscribe & Save) |
 
-## Tổng Điểm & Quyết Định (Simple Total Score)
+---
 
-Cộng điểm của cả 7 yếu tố lại với nhau.
+## TOTAL SCORE & STRATEGIC DECISION
 
-Điểm tối đa: 35 điểm.
+Sum the scores of all 7 factors.
 
-| Tổng Điểm | Quyết Định / Hành Động |
+**Maximum Score:** 35 points.
+
+| Total Score | Strategic Decision / Action |
 |---|---|
-| 7-14 | Bỏ qua hoặc tạm hoãn |
-| 15-21 | Thử nghiệm ưu tiên thấp |
-| 22-28 | Ứng viên kiểm chứng tốt |
-| 29-35 | Sản phẩm chiến lược / Ưu tiên hàng đầu |
+| **7 – 14** | Archive or skip |
+| **15 – 21** | Low priority test |
+| **22 – 28** | Good candidate — run a test series |
+| **29 – 35** | Strategic priority — focus primary content budget here |
 
-## Quy Tắc Kiểm Chứng Đề Xuất (Suggested Validation Rule)
+---
 
-Một sản phẩm thường nên đạt tối thiểu:
+## SUGGESTED VALIDATION RULE
 
-- 4 điểm trở lên cho Cường độ nỗi đau
-- 3 điểm trở lên cho Uy tín khoa học
-- 3 điểm trở lên cho Khả dụng trên sàn
-- Tổng điểm đạt từ 22 điểm trở lên
+To proceed with campaign production, a product should meet the following minimums:
+
+- **≥ 4 points** for Pain Intensity
+- **≥ 3 points** for Scientific Credibility
+- **≥ 3 points** for Market Availability
+- **Total score of 22 or higher**
 
 > [!IMPORTANT]
-> Nếu sản phẩm có hoa hồng cao nhưng uy tín khoa học yếu, tuyệt đối không ưu tiên. Trong lĩnh vực chăm sóc sức khỏe hệ vi sinh, lòng tin của khách hàng quan trọng hơn nhiều so với hoa hồng ngắn hạn.
+> Never prioritize high-commission products that have weak science or poor safety certifications. In health and wellness, building audience trust is critical to long-term conversion. A single false claim can damage channel credibility permanently.
 
-## Bảng Điểm Sản Phẩm Mẫu (Product Scorecard Template)
+---
 
-| Sản phẩm | Cường độ nỗi đau | Tiềm năng nội dung | Uy tín khoa học | Khả dụng trên sàn | Hoa hồng tiềm năng | Điểm khác biệt | Khả năng mua lại | Tổng điểm | Quyết định |
+## PRODUCT SCORECARD TEMPLATE
+
+| Product | Pain Intensity | Content Potential | Scientific Credibility | Market Availability | Commission Potential | Differentiation | Repeat Purchase | Total Score | Strategic Decision |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---|
-|  |  |  |  |  |  |  |  |  |  |
+| **BioLogic Mini** | 4 | 5 | 5 | 4 | 4 | 5 | 5 | **32** | 🔥 Priority |
+| **Biotica 800** | 4 | 5 | 5 | 4 | 5 | 5 | 5 | **33** | 🔥 Priority |
+| **E Biotic Home** | 5 | 4 | 5 | 3 | 5 | 5 | 4 | **31** | 🔥 Priority |
+| **Refill Cartridges**| 3 | 3 | 4 | 5 | 4 | 4 | 5 | **28** | ✅ Good Candidate |
 
-## Lưu Ý Khi Sử Dụng
+---
 
-- Tính điểm sản phẩm trước khi viết kịch bản và sản xuất video.
-- Đánh giá lại điểm số sau khi có dữ liệu click và đơn hàng thực tế.
-- Tập trung vào các sản phẩm kết hợp giữa nỗi đau lớn, khoa học uy tín và thói quen mua lại định kỳ.
-- Sử dụng bảng theo dõi chiến dịch để xác nhận xem phản hồi thực tế từ thị trường có đúng như dự đoán không.
+## USAGE BEST PRACTICES
+
+1. **Evaluate before you script:** Run the scorer *before* writing video scripts or ordering demo units.
+2. **Re-evaluate with real data:** Once you have CTR and Conversion Rate (CR) statistics in your Founder Hub, update your scores based on market feedback.
+3. **Focus on the recurring hook:** Prioritize products that combine high entry trust (devices) with mandatory recurring purchases (refill cartridges) to build a stable income baseline.

@@ -1,64 +1,82 @@
-# Mẫu Đánh Giá Tuần (Weekly Review)
+# WEEKLY PERFORMANCE REVIEW TEMPLATE
 
-**Tuần ngày:**
+**Week of:** [Date]
 
-## 1. Chỉ số tổng quan (Weekly Snapshot)
+---
 
-| Chỉ số | Kết quả | Ghi chú |
-|---|---:|---|
-| Tổng số bài đăng / video đã xuất bản |  |  |
-| Tổng lượt xem (Views) |  |  |
-| Tổng lượt nhấn (Clicks) |  |  |
-| Tổng đơn hàng (Orders) |  |  |
-| Tổng doanh thu tạm tính |  |  |
-| Tỷ lệ nhấp (CTR) |  | Clicks / Views |
-| Tỷ lệ chuyển đổi (CR) |  | Orders / Clicks |
-| Doanh thu trung bình trên mỗi bài viết |  | Revenue / Content pieces |
+## 1. Weekly Snapshot (KPIs)
 
-## 2. Góc tiếp cận nội dung hiệu quả nhất (Best Content Angle)
+| Metric | Result | Target / Formula | Status |
+|---|---:|---|---|
+| **Content Pieces Published** | | — | |
+| **Total Views** | | — | |
+| **Total Clicks** | | — | |
+| **Total Orders** | | — | |
+| **Estimated Revenue** | | — | |
+| **Click-Through Rate (CTR)** | % | Clicks / Views (Target: ≥2.0%) | |
+| **Conversion Rate (CR)** | % | Orders / Clicks (Target: ≥1.5%) | |
+| **Average Revenue Per Post** | $ | Revenue / Content Pieces | |
 
-| Góc nội dung / Tiêu đề | Minh chứng (Evidence) | Lý do thành công |
-|---|---|---|
-|  |  |  |
+---
 
-## 3. Phân tích theo danh mục sản phẩm (Best Product Category)
+## 2. Best Performing Content Angle
 
-| Danh mục | Số lượt click | Đơn hàng | Doanh thu | Ghi chú |
-|---|---:|---:|---:|---|
-|  |  |  |  |  |
-
-## 4. Top các sản phẩm chuyển đổi tốt nhất (Top Converting Products)
-
-| Sản phẩm | Danh mục | Số lượt click | Đơn hàng | Doanh thu | Tỷ lệ chuyển đổi (CR) | Quyết định |
-|---|---|---:|---:|---:|---:|---|
-|  |  |  |  |  |  |  |
-
-## 5. Nội dung / Góc tiếp cận kém hiệu quả nhất (Worst Performing Topics)
-
-| Chủ đề / Góc tiếp cận | Minh chứng | Lý do chính | Quyết định |
+| Title / Platform | Hook / Angle | Key Metrics (Views/CTR/CR) | Rationale for Success |
 |---|---|---|---|
-|  |  |  | Dừng / Viết lại / Test lại |
+| | | | |
 
-## 6. Đề xuất thử nghiệm tiếp theo (Recommended Next Tests)
+---
 
-| Thử nghiệm | Sản phẩm / Danh mục | Góc nội dung | Chỉ số thành công kỳ vọng | Người phụ trách | Hạn hoàn thành |
-|---|---|---|---|---|---|
-|  |  |  |  |  |  |
+## 3. Performance by Product Category
 
-## 7. Các quyết định chiến lược (Decisions)
+| Category | Clicks | Orders | Revenue ($) | Notes |
+|---|---:|---:|---:|---|
+| **Portable** (BioLogic Mini) | | | | |
+| **Room** (Biotica 800) | | | | |
+| **Whole Home** (E Biotic) | | | | |
+| **Refills** (Cartridges) | | | | |
 
-- Sản phẩm cần đẩy mạnh:
-- Sản phẩm cần tạm dừng/pause:
-- Góc nội dung cần lặp lại (scale-up):
-- Góc nội dung cần dừng lại:
-- Sản phẩm mới cần nghiên cứu thêm:
+---
 
-## 8. Trọng tâm tuần tới (Next Week Focus)
+## 4. Top Converting Products
 
-**Mục tiêu chính:**
+| Product | Clicks | Orders | Revenue ($) | Conversion Rate (CR) | Strategic Decision |
+|---|---:|---:|---:|---:|---|
+| | | | | | Scale / Maintain / Review |
 
-**Top 3 hành động cần làm:**
+---
 
-1.
-2.
-3.
+## 5. Worst Performing Topics
+
+| Title / Angle | Metrics | Rationale for Underperformance | Next Action |
+|---|---|---|---|
+| | | | Rewrite Hook / Swap Visuals / Archive |
+
+---
+
+## 6. Recommended Next Tests
+
+| Hypothesized Test | Target Product | Content Angle | Success Metric | Deadline |
+|---|---|---|---|---|
+| | | | | |
+
+---
+
+## 7. Strategic Decisions
+
+- **Products to scale up:**
+- **Products to deprioritize/pause:**
+- **Content hooks to replicate:**
+- **Content angles to retire:**
+- **New angles to research:**
+
+---
+
+## 8. Focus for Next Week
+
+**Primary Goal:**
+
+**Top 3 Action Items:**
+1. [ ] 
+2. [ ] 
+3. [ ] 

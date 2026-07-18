@@ -1,126 +1,113 @@
-# CẨM NANG ONBOARDING 7 NGÀY - MICROBIOME LIVING LAB
-*Dành cho Nhà sáng lập / Nhà sáng tạo nội dung Tiếp thị liên kết (Affiliate) trong lĩnh vực Vi sinh gia đình & Chăm sóc nhà cửa*
+# 7-DAY ONBOARDING MANUAL — ENVIROBIOTICS AFFILIATE HUB
+*For Affiliate Founders and Content Creators promoting Probiotic Air & Surface Care globally*
 
-Chào mừng bạn đến với **Microbiome Living Lab**! Tài liệu này là lộ trình chi tiết từng ngày (được sử dụng song song với trang quản trị **Founder Hub** tích hợp sẵn trên ứng dụng) giúp bạn chính thức vận hành mô hình kinh doanh Tiếp thị liên kết cho các sản phẩm vi sinh gia đình trong vòng 7 ngày.
+Welcome to the **EnviroBiotics Affiliate Hub**! This document is your step-by-step launch roadmap (used in tandem with the built-in interactive **Founder Hub** checklist) designed to help you set up, film, publish, and optimize your affiliate marketing system for EnviroBiotics products within 7 days.
 
 ---
 
-## TỔNG QUAN MÔ HÌNH KINH DOANH
+## BUSINESS MODEL OVERVIEW
 
 ```mermaid
 graph TD
-    A[Sản xuất video ngắn trên TikTok/Reels] -->|Nỗi đau / Lầm tưởng / Hook trực quan| B(Xem video & click vào Link Bio)
-    B -->|Chuyển hướng| C[Website Microbiome Living Lab]
-    C -->|Trắc nghiệm chẩn đoán / Bài viết chuyên sâu| D{Người dùng chọn sản phẩm}
-    D -->|Click Link Affiliate Shopee| E[Mua hàng thành công]
-    E -->|Nhận hoa hồng tiếp thị liên kết| F[Ghi nhận doanh thu & đánh giá KPIs]
+    A[Produce short videos on TikTok/Reels/Shorts] -->|Visual Hook / Pain Point / Myth| B(User views video & clicks Link-in-Bio)
+    B -->|Redirects to| C[Your Affiliate Hub Landing Page]
+    C -->|Diagnostic Quiz / Science Articles| D{User chooses system}
+    D -->|Clicks your custom Affiliate Link| E[EnviroBiotics Shopify Store Purchase]
+    E -->|Receives affiliate commission| F[Revenue Tracked & KPIs Analyzed in Founder Hub]
 ```
 
-### 1. Triết lý cốt lõi: "Sạch không có nghĩa là vô trùng"
-Hầu hết các gia đình đang lạm dụng hóa chất tẩy rửa mạnh (nước lau sàn diệt khuẩn hóa học, nước súc miệng chứa cồn, chai xịt phòng hóa học). Điều này vô tình tiêu diệt lợi khuẩn tự nhiên, tạo ra khoảng trống sinh học cho hại khuẩn và ve bụi (mạt nhà) bùng phát.
-Chúng ta định vị là một **Living Lab** (Phòng thí nghiệm sống) — cung cấp kiến thức khoa học và giải pháp cân bằng sinh học giúp cải thiện sức khỏe răng miệng, hô hấp và không gian sống cho gia đình.
+### 1. Core Philosophy: "Clean doesn't mean sterile"
+Traditional cleaning relies on harsh chemicals (disinfectant sprays, bleach, chemical wipes) that wipe out 99.9% of bacteria. This eliminates the beneficial bacteria along with the bad, creating a microbial vacuum that allows resilient pathogens, mold, and dust mites to recolonize surfaces rapidly. 
 
-### 2. Hai nhóm sản phẩm kết hợp:
-*   **Vật lý / Cơ học:** Cạo lưỡi inox, máy tăm nước, máy hút bụi nệm UV-C, bình rửa mũi. (Cung cấp giải pháp tức thì, tính trực quan cao dễ làm video ngắn).
-*   **Sinh học / Vi sinh:** Men vi sinh nha khoa K12/M18, xịt vi sinh kháng ve bụi nệm, xịt khử mùi enzyme sinh học, bào tử lợi khuẩn đường ruột. (Giải quyết tận gốc rễ vấn đề, tạo ra nguồn doanh thu lặp lại định kỳ).
+We position ourselves as a **Living Lab** and education center. We teach the science of **competitive exclusion**: introducing billions of beneficial, EPA-Registered probiotic strains into the indoor environment to build a self-sustaining microbial shield that outcompetes allergens, mold, and pathogens naturally.
 
----
-
-## LỘ TRÌNH HÀNH ĐỘNG CHI TIẾT 7 NGÀY
-
-### 📅 NGÀY 1: Định vị thương hiệu & Thiết lập cơ sở hạ tầng
-*   **Mục tiêu:** Đăng ký tài khoản Shopee Affiliate và hiểu cấu trúc kỹ thuật của hệ thống.
-*   **Các bước hành động:**
-    1.  **Đăng ký Shopee Affiliate:** Truy cập chương trình tiếp thị liên kết của Shopee Việt Nam để đăng ký tài khoản đối tác. Nhận mã tracking cá nhân của bạn.
-    2.  **Đọc tài liệu khoa học nền tảng:** Đọc kỹ 3 bài viết giáo dục trong Góc Kiến Thức trên website:
-        *   *Lưỡi: "Mỏ vàng" của vi khuẩn gây hôi miệng* (Hiểu về màng sinh học biofilm).
-        *   *Hệ sinh thái giường nệm & sức khỏe hô hấp* (Hiểu về mạt nhà/ve bụi).
-        *   *Hàng rào bảo vệ tự nhiên của mũi trước bụi mịn*.
-    3.  **Kiểm tra và chạy thử ứng dụng:** Chạy thử website trên localhost bằng cách gõ lệnh `npm run dev` trên cổng `3000` để kiểm tra giao diện.
+### 2. High-Value Device + Recurring Subscription Model:
+*   **Hardware Tier (High AOV):** BioLogic Mini ($99), Biotica 800 ($249), and E Biotic Home ($599+). These drive substantial one-time commissions and establish the customer's ecosystem hardware.
+*   **Refill Consumables (Recurring Commissions):** Probiotic Refill Cartridges ($29–$49 on Subscribe & Save). Cartridges must be replaced every 30–60 days, creating a reliable recurring commission stream for every customer you acquire.
 
 ---
 
-### 📅 NGÀY 2: Lựa chọn & Đánh giá sản phẩm
-*   **Mục tiêu:** Chọn ra 2-3 sản phẩm ưu tiên cao để làm nội dung thử nghiệm và đặt hàng mẫu.
-*   **Các bước hành động:**
-    1.  **Thực hành tính điểm sản phẩm:** Truy cập tab **Mô hình tính điểm** trên Founder Hub. Kéo các thanh trượt đánh giá từ 1-5 điểm cho 7 tiêu chí:
-        *   *Cường độ nỗi đau* (Nỗi đau của khách hàng có lớn và khẩn cấp không?)
-        *   *Tiềm năng nội dung* (Có dễ làm video ngắn trực quan, bắt mắt không?)
-        *   *Uy tín khoa học* (Chủng vi khuẩn có được y khoa chứng minh lâm sàng không?)
-        *   *Khả dụng trên sàn* (Sản phẩm có sẵn hàng chính hãng và dễ mua trên Shopee không?)
-        *   *Hoa hồng tiềm năng* (Tỷ lệ hoa hồng và giá trị đơn hàng có hấp dẫn không?)
-        *   *Điểm khác biệt* (Sản phẩm có điểm độc đáo gì so với hàng đại trà không?)
-        *   *Khả năng mua lại* (Khách hàng có tiêu dùng hết và mua lại định kỳ không?)
-    2.  **Đặt mua hàng mẫu:**
-        *   *Đề xuất 1:* Cạo lưỡi inox + Hộp viên ngậm lợi khuẩn nha khoa (Ngân sách khoảng 200k - 400k VND).
-        *   *Đề xuất 2:* Máy hút bụi giường nệm UV-C (Ngân sách khoảng 500k - 800k VND).
-    3.  **Tạo link affiliate cá nhân:** Lấy link sản phẩm chính hãng trên Shopee, chuyển đổi qua công cụ Shopee Affiliate thành link tracking cá nhân của bạn, sau đó cập nhật vào bảng cấu hình links trên trang Founder Hub.
+## 7-DAY ACTION PLAN
+
+### 📅 DAY 1: Platform Setup & Infrastructure
+*   **Goal:** Apply to the EnviroBiotics affiliate program and understand your technical tracking setup.
+*   **Action Steps:**
+    1.  **Register for the Affiliate Program:** Visit the partner page on envirobiotics.com to apply for your partner tracking link.
+    2.  **Study the Science Background:** Read the three foundational articles in the Knowledge Library on your website:
+        *   *The Indoor Ecosystem: Why Your Home's Microbiome Matters*
+        *   *Probiotics vs. Chemical Disinfectants: What Science Actually Says*
+        *   *Mold, Allergens & Dust Mites: The Invisible Threat in Your Home*
+    3.  **Run System Check:** Launch your local development server using `npm run dev` on port 3000 to verify that all links, routes, and dark mode toggles load correctly.
 
 ---
 
-### 📅 NGÀY 3: Soạn kịch bản nội dung thử nghiệm
-*   **Mục tiêu:** Viết nháp kịch bản video ngắn cho sản phẩm mẫu đã chọn theo 3 góc tiếp cận tiêu chuẩn.
-*   **Các bước hành động:**
-    1.  **Góc 1: Đánh trúng nỗi đau (Problem-based):**
-        *   *Khái niệm:* Chia sẻ sự tự ti, bất tiện của khách hàng trong đời sống hàng ngày.
-        *   *Ví dụ:* "Đánh răng ngày 3 lần mà chỉ 15 phút sau miệng đã chua lòm, thở ra có mùi làm bạn tự ti khi đứng gần đồng nghiệp?"
-    2.  **Góc 2: Vạch trần lầm tưởng (Myth-busting):**
-        *   *Khái niệm:* Chỉ ra một sai lầm phổ biến mà mọi người hay làm nhưng thực ra lại phản tác dụng.
-        *   *Ví dụ:* "Sự thật đáng sợ: Nước súc miệng cồn cay nồng thực chất làm hơi thở hôi hơn về lâu dài vì nó diệt sạch cả lợi khuẩn..."
-    3.  **Góc 3: Câu giật gân 3 giây đầu (Hook 3s):**
-        *   *Khái niệm:* Cảnh báo, kích thích sự tò mò mạnh bằng hình ảnh trực quan.
-        *   *Ví dụ:* "Đừng dùng nước súc miệng diệt khuẩn nếu bạn không muốn ổ vi khuẩn lưu huỳnh bùng phát!" hoặc "Cận cảnh lớp bợn trắng trên lưỡi mà bàn chải không bao giờ chải sạch được..."
+### 📅 DAY 2: Product Scoring & Demo Ordering
+*   **Goal:** Select your primary launch product and order a review unit.
+*   **Action Steps:**
+    1.  **Use the Product Scorer:** Open the **Product Scorer** tab in your Founder Hub. Score each of the 4 catalog options from 1 to 5 across 7 key dimensions (Pain Intensity, Content Potential, Science, Market Availability, Commission, Differentiation, Repeat Purchase).
+    2.  **Order Your Demo Unit:** 
+        *   *Recommended starter:* BioLogic Mini (budget-friendly, highly portable, easy to show on camera on a nightstand).
+        *   *Alternative:* Biotica 800 (higher ticket, best for family living room comparisons).
+    3.  **Configure Your Links:** Convert your EnviroBiotics partner links using your affiliate platform's generator, then paste them into the **Links** configuration tab on your Founder Hub to update the site-wide CTAs.
 
 ---
 
-### 📅 NGÀY 4: Quay & Dựng video ngắn đầu tiên
-*   **Mục tiêu:** Sản xuất video ngắn thử nghiệm (TikTok/Reels/Shorts) có tính trực quan cao.
-*   **Các bước hành động:**
-    1.  **Quay các cảnh trực quan đắt giá (Shock value):**
-        *   *Nếu làm về cạo lưỡi:* Quay cận cảnh (macro) cảnh cạo lưỡi từ cuống lưỡi kéo ra lớp bợn trắng nhầy (gây tò mò cực mạnh cho người xem).
-        *   *Nếu làm về hút bụi nệm:* Quay cảnh giường nệm nhìn có vẻ rất sạch, sau đó hút thử 1 phút và mở khay lọc chứa đầy bụi mịn xám xịt như bột.
-    2.  **Dựng video ngắn:**
-        *   Thời lượng lý tưởng: 35 - 55 giây.
-        *   Sử dụng phụ đề (caption) chữ to rõ ràng, nhịp dựng nhanh (không giữ một cảnh quá 3 giây).
+### 📅 DAY 3: Scripting the Launch Series
+*   **Goal:** Draft 3 short-form video scripts targeting the 3 proven conversion angles.
+*   **Action Steps:**
+    1.  **Script 1: Problem-Based (Dust Mites & Sleep):** Focus on the unseen dust mites on mattress surfaces and why standard HEPA filters can't reach them.
+    2.  **Script 2: Myth-Busting (Sterile Home Myth):** Address how bleach and chemical sprays strip the home's protective microbiome, leading to worse allergy rebounds.
+    3.  **Script 3: Science-Backed (Competitive Exclusion):** Explain the 3-step system (Select, Disperse, Restore) and reference EnviroBiotics' certifications (FDA GRAS, EPA Registered, MADE SAFE®).
+    4.  **Use Script Hub:** Load the script templates in the **Script Hub** on your dashboard, customize the hooks to match your personal voice, and check estimated read times to ensure they remain under 60 seconds.
 
 ---
 
-### 📅 NGÀY 5: Đăng tải nội dung & Gắn link bio
-*   **Mục tiêu:** Phân phối video lên các nền tảng mạng xã hội và điều hướng người xem về website.
-*   **Các bước hành động:**
-    1.  **Đăng tải vào khung giờ vàng:** Đăng video lên TikTok, Reels và YouTube Shorts vào khung giờ 11:30 - 13:00 (nghỉ trưa) hoặc 19:30 - 21:00 (buổi tối giải trí).
-    2.  **Đặt Link Bio:** Đặt link trang Microbiome Living Lab cá nhân của bạn vào phần mô tả kênh (Bio). Kêu gọi hành động ở cuối video để điều hướng người xem: "Click vào link bio để làm trắc nghiệm chẩn đoán vi sinh miễn phí hoặc đọc cơ chế y khoa".
-    3.  **Ghi nhật ký chiến dịch:** Vào **Founder Hub**, bấm nút **Thêm bài đăng mới ➕** để điền thông tin ban đầu: Ngày đăng, Nền tảng, Tiêu đề, Hook, Sản phẩm tiếp thị.
+### 📅 DAY 4: Filming Visual Assets
+*   **Goal:** Film high-quality, scroll-stopping visual hooks and product demonstrations.
+*   **Action Steps:**
+    1.  **Capture Visual Hooks (First 3 seconds):**
+        *   *Bedroom setup:* Film a macro close-up of the BioLogic Mini emitting its fine, ambient green probiotic mist on your bedside table.
+        *   *Before/After comparison:* Show a traditional chemical spray bottle being tossed into a trash can, replaced by the probiotic device.
+    2.  **Edit for High Retention:** Keep total video duration between 35 and 55 seconds. Add large, high-contrast captions and apply quick cuts every 2–3 seconds to keep viewers engaged.
 
 ---
 
-### 📅 NGÀY 6: Phân tích số liệu & Tối ưu chuyển đổi
-*   **Mục tiêu:** Đọc hiểu các chỉ số hiệu suất trên dashboard và thực hiện tối ưu hóa.
-*   **Các bước hành động:**
-    1.  **Cập nhật số liệu thực tế:** Từ 24-48 tiếng sau khi đăng video, cập nhật số liệu: Lượt xem, Lượt thích, Lượt nhấn (Clicks), Đơn hàng và Doanh thu thực tế vào bảng nhật ký chiến dịch trên Founder Hub.
-    2.  **Đo lường CTR & CR:**
-        *   **Click-Through Rate (CTR) = Số click / Số view:** Mục tiêu tối thiểu **2.0%**. Nếu thấp hơn, nghĩa là video chưa khơi gợi đủ sự tò mò hoặc lời kêu gọi hành động (CTA) cuối video quá mờ nhạt.
-        *   **Conversion Rate (CR) = Đơn hàng / Số click:** Mục tiêu từ **3.0% - 5.0%**. Nếu CTR cao nhưng CR thấp, hãy kiểm tra xem link Shopee của bạn có uy tín, nhiều lượt mua không, hoặc bài viết trên blog của bạn chưa đủ sức thuyết phục về khoa học.
-    3.  **Tự đánh giá báo cáo tuần:** Nhập các số liệu tổng hợp vào tab **Báo cáo đánh giá tuần** trên Founder Hub và xuất file markdown báo cáo tuần để lưu trữ.
+### 📅 DAY 5: Video Launch & Traffic Routing
+*   **Goal:** Distribute your first video and set up navigation pathways to your landing page.
+*   **Action Steps:**
+    1.  **Post on Peak Hours:** Upload your video to TikTok, Instagram Reels, and YouTube Shorts simultaneously. Optimal times are Tuesday–Thursday between 12:00 PM – 3:00 PM EST or 7:00 PM – 9:00 PM EST.
+    2.  **Optimize Link-in-Bio:** Place the link to your personal EnviroBiotics Affiliate Hub in your social media bios. Add a call-to-action (CTA) at the end of your video: *"Take the free indoor microbiome quiz in my bio to find the right system."*
+    3.  **Log the Campaign:** Open the **KPIs** tab in the Founder Hub, click **Add Campaign**, and record the date, platform, title, and product promoted.
 
 ---
 
-### 📅 NGÀY 7: Đóng gói Combo sản phẩm & Nhân bản kênh
-*   **Mục tiêu:** Gia tăng giá trị đơn hàng bằng cách giới thiệu combo giải pháp và tối ưu hóa hệ thống tiếp thị.
-*   **Các bước hành động:**
-    1.  **Quảng bá combo giải pháp:** Soạn kịch bản video hướng dẫn quy trình 3 bước (ví dụ: *Quy trình diệt ve bụi đệm dứt điểm ngứa mũi*, kết hợp Máy hút nệm UV-C + Chai xịt vi sinh giường nệm).
-    2.  **Đăng tải chéo đa kênh:** Đăng tải cùng một nội dung video lên cả 3 nền tảng: TikTok, Facebook Reels, và YouTube Shorts để tối đa hóa lượng truy cập tự nhiên mà không mất tiền chạy quảng cáo.
-    3.  **Xuất báo cáo CSV:** Bấm nút **Xuất dữ liệu CSV 💾** từ Founder Hub để tải về toàn bộ lịch sử chiến dịch tiếp thị nhằm tối ưu cho tuần tiếp theo.
+### 📅 DAY 6: Analytics & Conversion Optimization
+*   **Goal:** Read performance data, evaluate key metrics, and refine your approach.
+*   **Action Steps:**
+    1.  **Update Campaign Log:** Check your social media stats after 24–48 hours. Input Views, Clicks, Orders, and Revenue into your campaign tracker.
+    2.  **Evaluate KPIs:**
+        *   **Click-Through Rate (CTR):** Target **≥ 2.0%**. If low, revise your video's call-to-action (CTA) or place a clearer text overlay pointing to your bio.
+        *   **Conversion Rate (CR):** Target **≥ 1.5%**. If visitors are clicking but not buying, verify that your affiliate tracking links are active and routing to the correct product pages.
+    3.  **Run Weekly Review:** Go to the **Weekly Review** tab, click **Generate**, and check your automated analytics summary.
 
 ---
 
-## KHUNG ĐÁNH GIÁ CHẤT LƯỢNG KÊNH (KPI TEMPLATE)
+### 📅 DAY 7: Recurring Revenue & Multi-Channel Scaling
+*   **Goal:** Drive recurring commissions through subscription promotion and cross-promote.
+*   **Action Steps:**
+    1.  **Promote Subscribe & Save:** Create a video highlighting the importance of the probiotic refill cartridges for maintaining the microbial shield. Emphasize the monthly recurring savings.
+    2.  **Cross-Post Content:** Repurpose your top-performing video for Pinterest Idea Pins and Facebook Reels to capture passive organic traffic.
+    3.  **Backup Data:** Click **Export CSV** in your Founder Hub to download your campaign database and archive your first week of affiliate analytics.
 
-| Chỉ số | Yếu | Đạt yêu cầu | Xuất sắc | Hành động khắc phục |
+---
+
+## AFFILIATE METRIC EVALUATION FRAMEWORK (KPI TEMPLATE)
+
+| Metric | Low Performance | Target | Outstanding | Remedial Action |
 | :--- | :--- | :--- | :--- | :--- |
-| **Lượt xem (Views)** | < 1,000 | 3,000 - 10,000 | > 50,000 | Cải thiện 3 giây Hook đầu tiên, cắt nhịp dựng video nhanh hơn |
-| **Tỷ lệ nhấp (CTR)** | < 1.0% | 2.0% - 5.0% | > 8.0% | Nói rõ giải pháp hơn và đưa lời kêu gọi hành động (CTA) mạnh mẽ ở cuối |
-| **Tỷ lệ chuyển đổi (CR)** | < 1.0% | 3.0% - 6.0% | > 10.0% | Đọc kỹ phân tích y khoa, chuyển sang link Shopee Mall chính hãng có nhiều lượt bán |
-| **Tỷ lệ mua lại (RPR)** | < 2% | 5% - 15% | > 20% | Đẩy mạnh các sản phẩm vi sinh tiêu hao nhanh (Lợi khuẩn nha khoa, xịt khử mùi enzyme) |
+| **Views** | < 1,000 | 3,000 – 10,000 | > 50,000 | Improve the first 2-second hook; edit with faster cuts and brighter lighting. |
+| **CTR (Click Rate)** | < 1.0% | 2.0% – 5.0% | > 8.0% | Make the solution clearer on-screen; explicitly direct viewers to the link-in-bio. |
+| **CR (Conversion)** | < 1.0% | 1.5% – 4.0% | > 8.0% | Check that custom affiliate links are set up correctly; write detailed reviews. |
+| **Recurring Refills** | < 2% | 5% – 15% | > 20% | Create specific content focused on the 30/60-day cartridge replacement cycle. |
 
-Chúc bạn có một tuần onboarding thành công rực rỡ và gặt hái những đơn hàng đầu tiên! Hệ thống của bạn đã sẵn sàng hỗ trợ.
+Congratulations on completing your onboarding week! Your platform is fully configured and ready to scale. 🚀

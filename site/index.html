@@ -1,72 +1,82 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Microbiome Living Lab — Cân Bằng Vi Sinh Gia Đình</title>
-  <meta name="description" content="Khám phá các sản phẩm vi sinh gia đình đã được chứng minh y khoa cho sức khỏe răng miệng, hô hấp, nhà cửa và tiêu hóa. Sạch không có nghĩa là vô trùng.">
-  
-  <!-- Open Graph / Social SEO -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Microbiome Living Lab — Cân Bằng Vi Sinh Gia Đình">
-  <meta property="og:description" content="Khám phá các sản phẩm vi sinh gia đình đã được chứng minh y khoa cho sức khỏe răng miệng, hô hấp, nhà cửa và tiêu hóa.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&w=1200&q=80">
-  
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Microbiome Living Lab">
-  <meta name="twitter:description" content="Khám phá các sản phẩm vi sinh gia đình đã được chứng minh y khoa.">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&w=1200&q=80">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EnviroBiotics Affiliate Hub — Probiotic Air & Surface Care</title>
+  <meta name="description" content="Promote EnviroBiotics probiotic air and surface purifiers. Science-backed indoor ecosystem solutions. Track campaigns, generate content, and grow your affiliate income." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="EnviroBiotics Affiliate Hub" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="EnviroBiotics Affiliate Hub — Probiotic Air & Surface Care" />
+  <meta property="og:description" content="Your affiliate command center for EnviroBiotics — the world's leading environmental probiotic brand. FDA GRAS, EPA Registered, MADE SAFE®." />
+  <meta property="og:url" content="https://envirobiotics-affiliate.vercel.app/" />
+  <meta property="og:image" content="images/hero_banner.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EnviroBiotics Affiliate Hub" />
+  <meta name="twitter:description" content="Science-backed probiotic air & surface care. Promote globally." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" />
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav class="nav" id="main-nav">
-    <div class="nav__inner">
-      <a class="nav__brand" onclick="navigate('/')">
-        <div class="nav__brand-icon">🦠</div>
-        <span>Microbiome Lab</span>
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="#/" class="nav__brand" data-route="/">
+        <span class="nav__logo">🌿</span>
+        <span class="nav__brand-text">EnviroBiotics Hub</span>
       </a>
-      <div class="nav__links">
-        <a class="nav__link active" data-route="/" onclick="navigate('/')">Trang Chủ</a>
-        <a class="nav__link" data-route="/products" onclick="navigate('/products')">Sản Phẩm</a>
-        <a class="nav__link" data-route="/learn" onclick="navigate('/learn')">Góc Kiến Thức</a>
-        <a class="nav__link" data-route="/dashboard" onclick="navigate('/dashboard')">Founder Hub</a>
-      </div>
-      <div style="display:flex; align-items:center; gap:8px;">
-        <button id="theme-toggle-btn" class="theme-toggle-btn" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
-        <button class="nav__hamburger" id="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+
+      <nav class="nav__links" id="desktop-nav">
+        <a href="#/" class="nav__link" data-route="/">Home</a>
+        <a href="#/products" class="nav__link" data-route="/products">Products</a>
+        <a href="#/learn" class="nav__link" data-route="/learn">Learn</a>
+        <a href="#/dashboard" class="nav__link" data-route="/dashboard">Founder Hub</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle theme">🌙</button>
+        <a href="https://shop.envirobiotics.com/" target="_blank" rel="noopener" class="btn btn--primary btn--sm nav__cta">Shop Now →</a>
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
-  </nav>
 
-  <!-- Mobile Menu -->
-  <div class="nav__mobile" id="mobile-menu">
-    <a class="nav__link" data-route="/" onclick="navigate('/')">Trang Chủ</a>
-    <a class="nav__link" data-route="/products" onclick="navigate('/products')">Sản Phẩm</a>
-    <a class="nav__link" data-route="/learn" onclick="navigate('/learn')">Góc Kiến Thức</a>
-    <a class="nav__link" data-route="/dashboard" onclick="navigate('/dashboard')">Founder Hub</a>
-  </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#/" class="nav__link" data-route="/" id="mm-home">Home</a>
+      <a href="#/products" class="nav__link" data-route="/products">Products</a>
+      <a href="#/learn" class="nav__link" data-route="/learn">Learn</a>
+      <a href="#/dashboard" class="nav__link" data-route="/dashboard">Founder Hub</a>
+      <a href="https://shop.envirobiotics.com/" target="_blank" rel="noopener" class="btn btn--primary" style="margin-top:8px">Shop EnviroBiotics →</a>
+    </div>
+  </header>
 
-  <!-- App Mount Point -->
-  <main id="app"></main>
+  <main id="app">Loading...</main>
 
-  <!-- Footer -->
   <footer class="footer">
-    <div class="container">
-      <p><strong>Microbiome Living Lab</strong></p>
-      <p>Sạch không có nghĩa là vô trùng. Tương lai của sức khỏe là cân bằng vi sinh.</p>
-      <p style="margin-top:12px;">
-        © 2026 Microbiome Living Lab. Tài liệu chỉ nhằm mục đích giáo dục và thông tin.
-        <a onclick="navigate('/disclosure')" style="cursor:pointer; margin-left:12px;">Tuyên Bố Tiếp Thị Liên Kết</a>
-        <a onclick="navigate('/privacy')" style="cursor:pointer; margin-left:12px;">Chính Sách Bảo Mật</a>
-      </p>
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="nav__logo">🌿</span>
+        <p class="footer__tagline">"Clean doesn't mean sterile. True wellness begins with a balanced indoor ecosystem."</p>
+      </div>
+      <div class="footer__links">
+        <a href="#/disclosure">Affiliate Disclosure</a>
+        <a href="#/privacy">Privacy Policy</a>
+        <a href="https://envirobiotics.com/" target="_blank" rel="noopener">EnviroBiotics.com</a>
+      </div>
     </div>
   </footer>
 

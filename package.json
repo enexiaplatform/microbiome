@@ -1,16 +1,16 @@
 {
-  "name": "microbiome-living-lab",
+  "name": "envirobiotics-affiliate-hub",
   "version": "1.0.0",
-  "description": "Affiliate app and management hub for household microbiome products",
+  "description": "Affiliate command center and customer landing site for EnviroBiotics probiotic air & surface care products",
   "main": "site/app.js",
   "scripts": {
     "dev": "npx -y http-server site -p 3000"
   },
   "keywords": [
-    "microbiome",
+    "envirobiotics",
     "affiliate",
-    "shopee",
-    "vietnam"
+    "probiotic-air-purifier",
+    "microbiome"
   ],
   "author": "",
   "license": "ISC"
