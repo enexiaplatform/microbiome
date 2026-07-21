@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CATEGORIES, getCategory, isCategorySlug } from "@/data/categories";
@@ -51,6 +52,17 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         </h1>
         <p className="mt-4 text-lg leading-relaxed text-ink/70">{category.description}</p>
       </header>
+
+      <div className="relative mt-8 aspect-[21/9] overflow-hidden rounded-2xl border border-hairline">
+        <Image
+          src={category.cover}
+          alt=""
+          fill
+          priority
+          sizes="(min-width: 1024px) 72rem, 100vw"
+          className="object-cover"
+        />
+      </div>
 
       <div className="mt-10">
         {articles.length > 0 ? (

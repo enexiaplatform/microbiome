@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
@@ -142,6 +143,18 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               {article.author} · Last reviewed {formatDate(article.lastReviewed)} ·{" "}
               {article.readingTimeMinutes} min read
             </p>
+            {category ? (
+              <div className="relative mt-8 aspect-[21/9] overflow-hidden rounded-2xl border border-hairline">
+                <Image
+                  src={category.cover}
+                  alt=""
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 60rem, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            ) : null}
           </header>
 
           {hasProducts ? <AffiliateDisclosure /> : null}

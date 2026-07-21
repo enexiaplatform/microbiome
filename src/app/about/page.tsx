@@ -14,6 +14,10 @@ export default function AboutPage() {
     <ProsePage
       title="About The Microbiome Home"
       intro="An independent publication for people who want a fresher, calmer home — and want the evidence before the pitch."
+      image={{
+        src: "/images/hero-dog-sofa.jpg",
+        alt: "A border collie sitting on a light sofa beside houseplants in soft daylight",
+      }}
     >
       <h2>What we do</h2>
       <p>

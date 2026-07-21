@@ -72,16 +72,37 @@ export default function ProductCard({ slug, placement = "card" }: ProductCardPro
       className="not-prose my-8 overflow-hidden rounded-2xl border border-hairline bg-white shadow-card"
     >
       <div className="grid sm:grid-cols-[11rem_1fr]">
-        {/* Visual placeholder (no product photography on file) */}
+        {/* Brand illustration (no product photography on file) */}
         <div
           role="img"
           aria-label={product.imageAlt}
           className="flex min-h-32 items-center justify-center bg-sage-100 max-sm:min-h-24"
         >
-          <span aria-hidden="true" className="font-display text-3xl font-semibold text-pine-300">
-            {product.brand.slice(0, 1)}
-            {product.name.slice(0, 1)}
-          </span>
+          {product.category === "air-purification" ? (
+            <svg viewBox="0 0 64 64" aria-hidden="true" className="h-16 w-16 text-pine">
+              <rect x="22" y="8" width="20" height="44" rx="6" fill="none" stroke="currentColor" strokeWidth="2.5" />
+              <path d="M22 44h20" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+              <circle cx="32" cy="18" r="2" fill="currentColor" />
+              <circle cx="28" cy="26" r="1.4" fill="currentColor" opacity="0.7" />
+              <circle cx="36" cy="26" r="1.4" fill="currentColor" opacity="0.7" />
+              <circle cx="32" cy="33" r="1.4" fill="currentColor" opacity="0.7" />
+              <circle cx="28" cy="38" r="1.2" fill="currentColor" opacity="0.5" />
+              <circle cx="36" cy="38" r="1.2" fill="currentColor" opacity="0.5" />
+              <path d="M14 20c2.5-1.5 2.5-4.5 0-6M50 20c-2.5-1.5-2.5-4.5 0-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
+              <path d="M12 32c3-1.8 3-5.2 0-7M52 32c-3-1.8-3-5.2 0-7" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.35" />
+            </svg>
+          ) : (
+            <svg viewBox="0 0 64 64" aria-hidden="true" className="h-16 w-16 text-pine">
+              <path d="M26 10h12v10H26z" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" />
+              <path d="M38 13.5h9" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+              <path d="M50 8v11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
+              <path d="M54 10.5v7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.35" />
+              <path d="M27.5 20 24 27v24a5 5 0 0 0 5 5h6a5 5 0 0 0 5-5V27l-3.5-7" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" />
+              <path d="M24 37h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
+              <circle cx="30" cy="45" r="1.5" fill="currentColor" opacity="0.7" />
+              <circle cx="35" cy="49" r="1.5" fill="currentColor" opacity="0.5" />
+            </svg>
+          )}
         </div>
 
         <div className="p-5 sm:p-6">
