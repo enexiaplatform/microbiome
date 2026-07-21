@@ -1,0 +1,110 @@
+---
+# ============================================================================
+# SAMPLE ARTICLE — reference for MDX authors. This file is NOT published:
+# it lives at content/_sample.mdx, outside content/articles/, so the build
+# never picks it up. Copy it into content/articles/<slug>.mdx and edit.
+# ============================================================================
+title: "Sample article: every component, documented"
+description: "A reference article showing every custom MDX component available on The Microbiome Home, with copy-paste examples for authors."
+slug: "sample-article"
+category: "science" # pet-home | probiotic-cleaning | reviews | comparisons | science
+searchIntent: "informational" # commercial | informational
+publishedAt: "2026-07-19"
+updatedAt: "2026-07-19"
+lastReviewed: "2026-07-19"
+author: "The Microbiome Home Editorial Team"
+keywords: ["sample", "components", "author reference"]
+products: ["biologic-mini"] # affiliate disclosure + end CTA render automatically when non-empty
+sources:
+  - title: "Example source title"
+    url: "https://example.com/study"
+    publisher: "Example Publisher"
+faq:
+  - q: "Example question?"
+    a: "Example answer, one or two sentences, plain language."
+draft: true # keep true here; publish with draft: false
+---
+
+<!--
+  AUTHOR NOTES
+  ------------
+  - h2 headings (## ) become the table of contents automatically. Use them.
+  - An <AffiliateDisclosure /> box is injected near the top automatically when
+    the frontmatter `products` list is non-empty. You may also place it manually.
+  - Affiliate links NEVER go in raw markdown. Use <ProductCard> or <CTA>.
+  - Manufacturer claims are always phrased "The manufacturer states…".
+  - No medical or health claims. See /health-disclaimer for the standard.
+-->
+
+Intro paragraphs are plain markdown. **Bold**, *italic*, [editorial links](/about),
+and `inline code` all work, as do GFM tables, lists, and blockquotes.
+
+## ProductCard — single product showcase
+
+Renders name, brand, price (or "See price"), key features, the first
+manufacturer claim (labeled), and a clay CTA that routes through /go/<slug>.
+Tracks product_card_view (IntersectionObserver, once) and affiliate_click.
+
+<ProductCard slug="biologic-mini" />
+
+Unverified products display their verification note instead of hiding it:
+
+<ProductCard slug="purebiotics-pet" />
+
+## ProductComparison — side-by-side table
+
+Columns: price, coverage, format, refill cadence, best for. Comma-separated
+slugs; unknown slugs are skipped. Tracks comparison_view once in view.
+
+<ProductComparison slugs="biologic-mini,biotica-800,ba-2080" />
+
+## ProsCons — balanced verdict panel
+
+Pass arrays as JSX expressions:
+
+<ProsCons
+  pros={[
+    "No filters to replace — just a probiotic cartridge",
+    "Ultra-quiet; easy to move between rooms",
+  ]}
+  cons={[
+    "Coverage tops out at 300 sq ft per unit",
+    "Cartridge cost recurs about every 90 days",
+  ]}
+/>
+
+## EvidenceRating — inline evidence badge
+
+Levels: strong | moderate | limited. The optional note is exposed as a
+tooltip and to screen readers.
+
+The research here is <EvidenceRating level="moderate" note="Several small independent studies; larger trials still needed." /> and still developing.
+
+## Callout — highlighted note box
+
+<Callout type="info">
+  EnviroBiotics rebranded from BetterAir in 2025 — older reviews may still use
+  the BetterAir name.
+</Callout>
+
+<Callout type="warning">
+  Don't mix probiotic cleaners with disinfectants on the same surface at the
+  same time; the disinfectant can knock out the beneficial bacteria.
+</Callout>
+
+## CTA — inline affiliate button
+
+Always routes through /go/<slug> with source page and placement attached.
+Placement is "inline" or "end". An end-of-article CTA is added automatically
+for the first product in frontmatter; use inline CTAs inside the flow.
+
+<CTA product="biotica-800" placement="inline">Check Biotica 800 pricing</CTA>
+
+## Markdown basics that just work
+
+- Lists, including task lists via GFM
+- Tables (keep them narrow for mobile)
+- > Blockquotes for pull-quotes
+- Footnotes via GFM when you need them
+
+Write calmly. Label claims. Cite sources. Never promise health outcomes.

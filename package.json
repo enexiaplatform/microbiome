@@ -1,17 +1,35 @@
 {
-  "name": "envirobiotics-affiliate-hub",
-  "version": "1.0.0",
-  "description": "Affiliate command center and customer landing site for EnviroBiotics probiotic air & surface care products",
-  "main": "site/app.js",
+  "name": "the-microbiome-home",
+  "version": "0.1.0",
+  "private": true,
+  "description": "The Microbiome Home — science-backed guides to a microbiome-friendly home for people and pets.",
   "scripts": {
-    "dev": "npx -y http-server site -p 3000"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
   },
-  "keywords": [
-    "envirobiotics",
-    "affiliate",
-    "probiotic-air-purifier",
-    "microbiome"
-  ],
-  "author": "",
-  "license": "ISC"
+  "dependencies": {
+    "github-slugger": "^2.0.0",
+    "gray-matter": "^4.0.3",
+    "next": "^15.3.4",
+    "next-mdx-remote": "^5.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "rehype-slug": "^6.0.0",
+    "remark-gfm": "^4.0.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^15.3.4",
+    "postcss": "^8.5.4",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.8.3"
+  }
 }

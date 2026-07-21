@@ -348,7 +348,7 @@ const ARTICLE_CONTENT = {
 const defaultOnboarding = [
   // Day 1
   { day: 1, id: 'ob1', text: 'Join the EnviroBiotics affiliate/partner program at envirobiotics.com/affiliate', done: false, detail: 'Apply for the affiliate program. You\'ll receive your unique referral code and tracking links within 1–3 business days.' },
-  { day: 1, id: 'ob2', text: 'Set up your affiliate tracking links in config.js', done: false, detail: 'Once approved, paste your personal affiliate links into site/config.js for each product.' },
+  { day: 1, id: 'ob2', text: 'Set up your affiliate tracking links in the Links tab of the Founder Hub', done: false, detail: 'Once approved, paste your personal affiliate links into the Links tab of the Founder Hub. This will update all buttons on the website instantly.' },
   { day: 1, id: 'ob3', text: 'Order your first product sample (BioLogic Mini recommended)', done: false, detail: 'Personal experience is the most credible content. Order BioLogic Mini to test in your bedroom for 2 weeks before filming.' },
   // Day 2
   { day: 2, id: 'ob4', text: 'Read the full EnviroBiotics technology page: envirobiotics.com/how-it-works', done: false, detail: 'Understanding the science deeply makes your content 10x more credible and persuasive.' },
