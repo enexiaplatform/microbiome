@@ -9,6 +9,7 @@ import CategoryIcon from "@/components/CategoryIcon";
 import HeroSearch from "@/components/HeroSearch";
 import NewsletterForm from "@/components/NewsletterForm";
 import ProductCard from "@/components/mdx/ProductCard";
+import ProductLineup from "@/components/ProductLineup";
 
 export const metadata: Metadata = {
   title: "Science-backed guides to a microbiome-friendly home",
@@ -158,6 +159,24 @@ export default function HomePage() {
               <ProductCard key={slug} slug={slug} placement="home_featured" />
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* EnviroBiotics lineup */}
+      <section aria-labelledby="lineup-heading" className="container-site py-16 sm:py-20">
+        <h2 id="lineup-heading" className="font-display text-3xl font-semibold tracking-tight text-ink">
+          The EnviroBiotics lineup — pick by room size
+        </h2>
+        <p className="mt-2 max-w-2xl text-ink/70">
+          Four probiotic air &amp; surface purification systems, from a take-anywhere 300 sq ft unit to
+          whole-home HVAC integration. Prices from the manufacturer&apos;s store; their claims are always
+          labeled as such in our reviews.
+        </p>
+        <div className="mt-8">
+          <ProductLineup
+            slugs={["biologic-mini", "biotica-800", "ba-2080", "e-biotic-pro"]}
+            placement="home_lineup"
+          />
         </div>
       </section>
 
