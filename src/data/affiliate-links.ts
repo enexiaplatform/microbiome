@@ -1,9 +1,11 @@
 /**
  * Affiliate link resolution.
  *
- * Public affiliate programs for EnviroBiotics / PureBiotics are UNVERIFIED,
- * so every destination is env-driven: set AFFILIATE_<SLUG> to an affiliate
- * URL when a program exists, otherwise the plain product URL is used.
+ * EnviroBiotics referral program is CONFIRMED (as of 2026-07-21):
+ * 15% commission via ?ref=MICROBIOME, plus coupon code MICROBIOME for
+ * 10% off at checkout. PureBiotics remains UNVERIFIED.
+ * Every destination is still env-overridable: set AFFILIATE_<SLUG> to a
+ * different affiliate URL when needed, otherwise the default is used.
  * Resolution happens server-side only (in /go/[slug]) so env values are
  * never exposed to the client bundle.
  */
@@ -13,21 +15,23 @@ export interface AffiliateLink {
   merchant: string;
 }
 
+const EB_REF = "?ref=MICROBIOME";
+
 const DEFAULT_LINKS: Record<string, AffiliateLink> = {
   "biologic-mini": {
-    url: "https://shop.envirobiotics.com/products/biologic-mini",
+    url: `https://shop.envirobiotics.com/products/biologic-mini${EB_REF}`,
     merchant: "EnviroBiotics",
   },
   "biotica-800": {
-    url: "https://shop.envirobiotics.com/products/biotica-800",
+    url: `https://shop.envirobiotics.com/products/biotica-800${EB_REF}`,
     merchant: "EnviroBiotics",
   },
   "ba-2080": {
-    url: "https://envirobiotics.com",
+    url: `https://shop.envirobiotics.com/collections/all${EB_REF}`,
     merchant: "EnviroBiotics",
   },
   "e-biotic-pro": {
-    url: "https://envirobiotics.com",
+    url: `https://shop.envirobiotics.com/collections/all${EB_REF}`,
     merchant: "EnviroBiotics",
   },
   "purebiotics-all-purpose": {

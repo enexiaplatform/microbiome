@@ -130,6 +130,19 @@ export default function ProductCard({ slug, placement = "card" }: ProductCardPro
             </div>
           </div>
 
+          {product.coupon ? (
+            <p className="mt-3 inline-flex items-center gap-2 rounded-lg border border-clay-200 bg-clay-100 px-3 py-2 text-xs font-semibold text-clay-700">
+              <svg viewBox="0 0 16 16" aria-hidden="true" className="h-3.5 w-3.5">
+                <path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h9A1.5 1.5 0 0 1 14 5.5v1a2 2 0 0 0 0 3v1a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 10.5v-1a2 2 0 0 0 0-3z" fill="none" stroke="currentColor" strokeWidth="1.5" />
+                <path d="M9 4v8" fill="none" stroke="currentColor" strokeWidth="1.5" strokeDasharray="2 2" />
+              </svg>
+              {product.coupon.note} — code{" "}
+              <span className="rounded bg-white px-1.5 py-0.5 font-mono font-bold tracking-wider text-clay">
+                {product.coupon.code}
+              </span>
+            </p>
+          ) : null}
+
           {!product.verified && product.verificationNote ? (
             <p className="mt-3 rounded-lg border border-clay-200 bg-clay-100 px-3 py-2 text-xs leading-relaxed text-clay-700">
               {product.verificationNote}

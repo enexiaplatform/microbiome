@@ -36,6 +36,8 @@ export interface Product {
   imageAlt: string;
   /** Optional manufacturer product photo under public/images/products/. */
   image?: string;
+  /** Optional reader discount code honored at the merchant's checkout. */
+  coupon?: { code: string; note: string };
   /** Environment variable that holds the affiliate URL override. */
   affiliateEnvKey: string;
   /** False = details unverified; UI must flag instead of assert. */
@@ -49,6 +51,9 @@ const enviroBioticsClaims: string[] = [
   "The manufacturer states it reduces organic odors in the air and on surfaces.",
   "The manufacturer states it is chemical-free, fragrance-free, and produces no ozone.",
 ];
+
+/** Confirmed EnviroBiotics referral program (2026-07-21): reader discount at checkout. */
+const enviroBioticsCoupon = { code: "MICROBIOME", note: "10% off at the EnviroBiotics store" } as const;
 
 export const PRODUCTS: Product[] = [
   {
@@ -74,6 +79,7 @@ export const PRODUCTS: Product[] = [
       "EnviroBiotics BioLogic Mini (Gen 2), a small portable environmental probiotic purifier for rooms up to 300 square feet.",
     image: "/images/products/biologic-mini.jpg",
     affiliateEnvKey: "AFFILIATE_BIOLOGIC_MINI",
+    coupon: enviroBioticsCoupon,
     verified: true,
   },
   {
@@ -99,6 +105,7 @@ export const PRODUCTS: Product[] = [
       "EnviroBiotics Biotica 800 environmental probiotic purifier, shown as a slim plug-in unit for rooms up to 800 square feet.",
     image: "/images/products/biotica-800.jpg",
     affiliateEnvKey: "AFFILIATE_BIOTICA_800",
+    coupon: enviroBioticsCoupon,
     verified: true,
   },
   {
@@ -124,6 +131,7 @@ export const PRODUCTS: Product[] = [
     imageAlt:
       "EnviroBiotics BA 2080, a hybrid HEPA and probiotic air treatment unit for spaces up to 2,600 square feet.",
     affiliateEnvKey: "AFFILIATE_BA_2080",
+    coupon: enviroBioticsCoupon,
     verified: true,
   },
   {
@@ -150,6 +158,7 @@ export const PRODUCTS: Product[] = [
     imageAlt:
       "EnviroBiotics E-Biotic Pro, an HVAC-integrated environmental probiotic system for whole-home or commercial use.",
     affiliateEnvKey: "AFFILIATE_E_BIOTIC_PRO",
+    coupon: enviroBioticsCoupon,
     verified: true,
   },
   {
@@ -212,7 +221,7 @@ export const brandNotes = {
   envirobioticsRebrand:
     "EnviroBiotics rebranded from BetterAir in 2025; older reviews and forum threads may still reference the BetterAir name.",
   affiliateProgramsUnverified:
-    "Whether EnviroBiotics or PureBiotics run public affiliate programs is unverified; all outbound product links use configurable, env-driven placeholders.",
+    "EnviroBiotics referral program confirmed 2026-07-21 (15% via ?ref=MICROBIOME, reader coupon MICROBIOME = 10% off). PureBiotics public affiliate program remains unverified; its outbound links use configurable, env-driven placeholders.",
 } as const;
 
 export function getProduct(slug: string): Product | undefined {

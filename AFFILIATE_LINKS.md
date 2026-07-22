@@ -27,18 +27,19 @@ Resolution happens **server-side only**, so affiliate URLs from env vars are nev
 
 One env var per product slug, defined in `src/data/affiliate-links.ts` (`ENV_KEYS`) and `.env.example`:
 
-| Slug | Env var | Fallback URL (when env unset) | Merchant |
+| Slug | Env var | Default URL (when env unset) | Merchant |
 |---|---|---|---|
-| `biologic-mini` | `AFFILIATE_BIOLOGIC_MINI` | `https://shop.envirobiotics.com/products/biologic-mini` | EnviroBiotics |
-| `biotica-800` | `AFFILIATE_BIOTICA_800` | `https://shop.envirobiotics.com/products/biotica-800` | EnviroBiotics |
-| `ba-2080` | `AFFILIATE_BA_2080` | `https://envirobiotics.com` | EnviroBiotics |
-| `e-biotic-pro` | `AFFILIATE_E_BIOTIC_PRO` | `https://envirobiotics.com` | EnviroBiotics |
+| `biologic-mini` | `AFFILIATE_BIOLOGIC_MINI` | `https://shop.envirobiotics.com/products/biologic-mini?ref=MICROBIOME` | EnviroBiotics |
+| `biotica-800` | `AFFILIATE_BIOTICA_800` | `https://shop.envirobiotics.com/products/biotica-800?ref=MICROBIOME` | EnviroBiotics |
+| `ba-2080` | `AFFILIATE_BA_2080` | `https://shop.envirobiotics.com/collections/all?ref=MICROBIOME` | EnviroBiotics |
+| `e-biotic-pro` | `AFFILIATE_E_BIOTIC_PRO` | `https://shop.envirobiotics.com/collections/all?ref=MICROBIOME` | EnviroBiotics |
 | `purebiotics-all-purpose` | `AFFILIATE_PUREBIOTICS_ALL_PURPOSE` | `https://purebioticsusa.com` | PureBiotics |
 | `purebiotics-pet` | `AFFILIATE_PUREBIOTICS_PET` | `https://purebioticsusa.com` | PureBiotics |
 
-**Verification status** (as of 2026-07-19, per `src/data/products.ts`):
+**Verification status** (as of 2026-07-21):
 
-- **Public affiliate programs: UNVERIFIED for all products.** Whether EnviroBiotics or PureBiotics run public affiliate programs is unconfirmed — hence every destination is env-driven with a plain (non-affiliate) fallback. Until a program is confirmed, leave the env vars empty.
+- **EnviroBiotics referral program: CONFIRMED.** 15% commission via `?ref=MICROBIOME` on shop.envirobiotics.com; readers get 10% off with coupon code `MICROBIOME` at checkout (surfaced as a badge on product cards via the `coupon` field in `src/data/products.ts`). The default links carry the ref param — no env vars needed unless you want to override the tracking URL.
+- **PureBiotics affiliate program: UNVERIFIED.** Its destinations remain plain (non-affiliate) product URLs until a program is confirmed.
 - **Product detail verification:** `biologic-mini`, `biotica-800`, `ba-2080`, `e-biotic-pro`, and `purebiotics-all-purpose` are `verified: true`. `purebiotics-pet` is `verified: false` (price and details to confirm) — the UI surfaces its verification note instead of hiding it.
 
 ## Connecting real affiliate links later (no code changes)
