@@ -33,7 +33,7 @@ One env var per product slug, defined in `src/data/affiliate-links.ts` (`ENV_KEY
 | `biotica-800` | `AFFILIATE_BIOTICA_800` | `https://shop.envirobiotics.com/products/biotica-800?ref=MICROBIOME` | EnviroBiotics |
 | `ba-2080` | `AFFILIATE_BA_2080` | `https://shop.envirobiotics.com/collections/all?ref=MICROBIOME` | EnviroBiotics |
 | `e-biotic-pro` | `AFFILIATE_E_BIOTIC_PRO` | `https://shop.envirobiotics.com/collections/all?ref=MICROBIOME` | EnviroBiotics |
-| `purebiotics-all-purpose` | `AFFILIATE_PUREBIOTICS_ALL_PURPOSE` | `https://purebioticsusa.com` | PureBiotics |
+| `purebiotics-all-purpose` | `AFFILIATE_PUREBIOTICS_ALL_PURPOSE` | `https://purebioticsusa.com/products/probiotic-all-purpose-cleaner` | PureBiotics |
 | `purebiotics-pet` | `AFFILIATE_PUREBIOTICS_PET` | `https://purebioticsusa.com` | PureBiotics |
 
 **Verification status** (as of 2026-07-21):

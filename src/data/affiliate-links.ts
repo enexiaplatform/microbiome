@@ -35,7 +35,7 @@ const DEFAULT_LINKS: Record<string, AffiliateLink> = {
     merchant: "EnviroBiotics",
   },
   "purebiotics-all-purpose": {
-    url: "https://purebioticsusa.com",
+    url: "https://purebioticsusa.com/products/probiotic-all-purpose-cleaner",
     merchant: "PureBiotics",
   },
   "purebiotics-pet": {

@@ -184,6 +184,7 @@ export const PRODUCTS: Product[] = [
     certifications: ["Green Seal (unscented version, per manufacturer)"],
     imageAlt:
       "PureBiotics Probiotic All-Purpose Cleaner spray bottle for everyday household surface cleaning.",
+    image: "/images/products/purebiotics-all-purpose.jpg",
     affiliateEnvKey: "AFFILIATE_PUREBIOTICS_ALL_PURPOSE",
     verified: true,
   },

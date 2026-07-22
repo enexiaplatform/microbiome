@@ -75,6 +75,9 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const related = getRelatedArticles(article, 3);
   const hasProducts = article.products.length > 0;
   const endCtaProduct = hasProducts ? getProduct(article.products[0]) : undefined;
+  const articleProducts = article.products
+    .map((slug) => getProduct(slug))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
   return (
     <div className="container-site py-12 sm:py-16">
@@ -122,6 +125,27 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 },
               ]
             : []),
+          // Product entities with offers; deliberately no rating fields —
+          // we publish no star ratings, so none are marked up.
+          ...articleProducts.map((product) => ({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: `${product.brand} ${product.name}`,
+            description: product.imageAlt,
+            ...(product.image ? { image: absoluteUrl(product.image) } : {}),
+            brand: { "@type": "Brand", name: product.brand },
+            ...(product.price !== null
+              ? {
+                  offers: {
+                    "@type": "Offer",
+                    price: product.price.toFixed(2),
+                    priceCurrency: "USD",
+                    availability: "https://schema.org/InStock",
+                    url: absoluteUrl(`/go/${product.slug}`),
+                  },
+                }
+              : {}),
+          })),
         ]}
       />
 
