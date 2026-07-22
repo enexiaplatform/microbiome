@@ -60,22 +60,22 @@ export default function HomePage() {
             <HeroSearch />
           </div>
           <div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-hairline shadow-card">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-hairline shadow-card lg:aspect-[3/4]">
               <video
                 autoPlay
                 muted
                 loop
                 playsInline
                 preload="metadata"
-                poster="/images/cover-probiotic-cleaning.jpg"
-                aria-label="A person wiping a kitchen counter with a spray bottle and cloth"
+                poster="/images/cover-pet-home.jpg"
+                aria-label="A dog resting its head on a cream sofa in a calm, sunlit living room"
                 className="absolute inset-0 h-full w-full object-cover"
               >
-                <source src="/images/hero-cleaning.mp4" type="video/mp4" />
+                <source src="/images/hero-dog.mp4" type="video/mp4" />
               </video>
             </div>
             <p className="mt-3 text-center text-xs text-ink/50 lg:text-left">
-              Probiotic cleaning in a real kitchen — biology doing the work, not harsh chemistry.
+              A calm home, shared with the ones who shed on it — that&apos;s what we optimize for.
             </p>
           </div>
         </div>
