@@ -34,6 +34,8 @@ export interface Product {
   certifications: string[];
   /** Accessible alt description used wherever product imagery appears. */
   imageAlt: string;
+  /** Optional manufacturer product photo under public/images/products/. */
+  image?: string;
   /** Environment variable that holds the affiliate URL override. */
   affiliateEnvKey: string;
   /** False = details unverified; UI must flag instead of assert. */
@@ -70,6 +72,7 @@ export const PRODUCTS: Product[] = [
     certifications: [],
     imageAlt:
       "EnviroBiotics BioLogic Mini (Gen 2), a small portable environmental probiotic purifier for rooms up to 300 square feet.",
+    image: "/images/products/biologic-mini.jpg",
     affiliateEnvKey: "AFFILIATE_BIOLOGIC_MINI",
     verified: true,
   },
@@ -94,6 +97,7 @@ export const PRODUCTS: Product[] = [
     certifications: [],
     imageAlt:
       "EnviroBiotics Biotica 800 environmental probiotic purifier, shown as a slim plug-in unit for rooms up to 800 square feet.",
+    image: "/images/products/biotica-800.jpg",
     affiliateEnvKey: "AFFILIATE_BIOTICA_800",
     verified: true,
   },

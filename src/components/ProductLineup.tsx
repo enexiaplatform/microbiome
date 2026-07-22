@@ -29,6 +29,10 @@ export default function ProductLineup({ slugs, placement = "lineup" }: ProductLi
           className="group flex flex-col rounded-2xl border border-hairline bg-paper p-5 transition-shadow hover:shadow-card"
         >
           <div className="flex items-center justify-between gap-2">
+            {product.image ? (
+              // eslint-disable-next-line @next/next/no-img-element -- tiny fixed-size product thumb
+              <img src={product.image} alt={product.imageAlt} className="h-16 w-16 rounded-lg bg-white object-contain p-1" />
+            ) : (
             <svg viewBox="0 0 64 64" aria-hidden="true" className="h-10 w-10 text-pine">
               <rect x="22" y="8" width="20" height="44" rx="6" fill="none" stroke="currentColor" strokeWidth="2.5" />
               <path d="M22 44h20" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
@@ -38,6 +42,7 @@ export default function ProductLineup({ slugs, placement = "lineup" }: ProductLi
               <circle cx="32" cy="33" r="1.4" fill="currentColor" opacity="0.7" />
               <path d="M14 20c2.5-1.5 2.5-4.5 0-6M50 20c-2.5-1.5-2.5-4.5 0-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
             </svg>
+            )}
             <p className="font-display text-lg font-semibold text-pine">{formatPrice(product)}</p>
           </div>
           <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-ink/50">{product.brand}</p>

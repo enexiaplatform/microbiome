@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { formatPrice, getProduct } from "@/data/products";
@@ -72,7 +73,18 @@ export default function ProductCard({ slug, placement = "card" }: ProductCardPro
       className="not-prose my-8 overflow-hidden rounded-2xl border border-hairline bg-white shadow-card"
     >
       <div className="grid sm:grid-cols-[11rem_1fr]">
-        {/* Brand illustration (no product photography on file) */}
+        {/* Manufacturer product photo when on file, else brand illustration */}
+        {product.image ? (
+          <div className="relative flex min-h-32 items-center justify-center bg-white max-sm:min-h-24">
+            <Image
+              src={product.image}
+              alt={product.imageAlt}
+              width={176}
+              height={176}
+              className="h-full max-h-44 w-auto object-contain p-3"
+            />
+          </div>
+        ) : (
         <div
           role="img"
           aria-label={product.imageAlt}
@@ -104,6 +116,7 @@ export default function ProductCard({ slug, placement = "card" }: ProductCardPro
             </svg>
           )}
         </div>
+        )}
 
         <div className="p-5 sm:p-6">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
